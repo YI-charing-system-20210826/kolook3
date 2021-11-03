@@ -23,9 +23,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-//実行時に宣言した各フィールド変数がカラムとして作成される
-//問１－１ DB設計に必要なアノテーションを記述
-//データの入れ物となるエンティティクラス。
+
 @Entity
 
 @Table(name = "accounts")
@@ -38,8 +36,6 @@ public class Customer implements UserDetails {
 		ROLE_USER, ROLE_MANAGER, ROLE_ADMIN
 	}
 
-	//問１－２ プライマリーキーを設定するアノテーションを記述
-	//プライマリーキーとなるプロパティやフィールドを指している。
 	@Id
 
     //@Column:Entityクラス内で定義したカラム名に相当するメンバ変数に付与する。
