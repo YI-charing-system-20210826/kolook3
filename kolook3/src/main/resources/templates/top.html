@@ -4,22 +4,48 @@
 <head>
 <meta charset="UTF-8" />
 <title>メニュー画面</title>
+<style>
+body {
+	background-image:
+		url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
+	background-size: cover;
+	font-size: 30px;
+	font-weight: 200;
+	text-align: center;
+}
+
+</style>
 </head>
-<body>
-	<h2>こんにちは</h2>
+<body class="body">
+	<h2 style="font-size: 50px;font-weight: 200;font-family: Century;">MyPage</h2>
 	<div th:fragment="logout" sec:authorize="isAuthenticated()">
 		<p>
-			こんにちは: <span sec:authentication="name"></span>さん
+			管理者名: <span sec:authentication="name"></span>
 		</p>
 		<p>
-			mail: <span sec:authentication="principal.mailAddress"></span>
+			メールアドレス: <span sec:authentication="principal.mailAddress"></span>
 		</p>
 		<p>
 			権限: <span sec:authentication="principal.authorities"></span>
 		</p>
-		<form action="#" th:action="@{/logout}" method="post">
-			<input type="submit" value="ログアウト" />
-		</form>
+		<table>
+			<tr>
+				<td>
+					<form action="#" th:action="@{/logout}" method="post">
+						<input type="submit" value="ログアウト" />
+					</form>
+				</td>
+
+				<td>
+					<form action="#" th:action="@{/customer/list}" method="post">
+						<input type="submit" value="顧客一覧画面へ" />
+					</form>
+
+				</td>
+			</tr>
+		</table>
+
 	</div>
+
 </body>
 </html>

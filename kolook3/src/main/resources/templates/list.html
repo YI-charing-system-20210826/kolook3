@@ -33,7 +33,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="customer : ${customer}" th:object="${customer}"
+				<tr th:each="customer : ${customerlist}" th:object="${customer}"
 					class="align-middle">
 					<td th:text="*{customer_id}"></td>
 					<td th:text="*{last_name}"></td>

@@ -2,27 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<title>Login page</title>
+<title>Kolookログイン</title>
 <style>
-.alert-danger {
-	color: red;
+body {
+	background-image:
+		url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
+	background-size: cover;
+	font-size: 30px;
+	font-weight: 200;
+	text-align: center;
 }
+
+
 </style>
 </head>
-<body>
-	<h2>Kolookログイン画面</h2>
+<body class="body">
+	<h2 style="font-size: 50px;font-weight: 200;font-family: Century;">Kolook</h2>
 	<form th:action="@{/login}" method="post">
 		<div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null"
 			class="alert-danger">
 			<span th:text="ユーザ名またはパスワードに誤りがあります"></span>
 		</div>
-		
-		<div style="width: 160px;">
-			<label for="username">ユーザ名：</label>
+
+		<div style="width: center;">
+			<label for="username" >ユーザ名</label>
 		</div>
 		<input type="text" name="username" autofocus="autofocus" /> <br />
-		<div style="width: 160px;">
-			<label for="password">パスワード：</label>
+		<div style="width: center;">
+			<label for="password">パスワード</label>
 		</div>
 		<input type="password" name="password" /> <br />
 		<p>

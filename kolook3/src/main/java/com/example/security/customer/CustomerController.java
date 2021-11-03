@@ -15,6 +15,9 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerRepository repository;
+	
+	@Autowired
+	private CustomerSelectService customerSelectService;
 
 	public List<Customer> get() {
 		return (List<Customer>) repository.findAll();
@@ -33,15 +36,15 @@ public class CustomerController {
 	}
 
 	//顧客情報一覧画面
-	@GetMapping("/customer/list")
+	@GetMapping(value = "/customer/list")
 	public String displayList(Model model) {
-		List<Customer> customerList = CustomerRepository.searchAll();
+		List<Customer> customerList = customerSelectService.searchAll();
 		model.addAttribute("customerList", customerList);
-		return "/customer/list";
+		return "customer/list";
 	}
 
 	//顧客新規登録画面の表示
-	@GetMapping(value = "customer/add")
+	@GetMapping(value = "/customer/add")
 	public String displayAdd(Model model) {
 		return "customer/add";
 	}
