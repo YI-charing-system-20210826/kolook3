@@ -36,15 +36,15 @@ public class CustomerController {
 	}
 
 	//顧客情報一覧画面
-	@GetMapping(value = "/customer/list")
-	public String displayList(Model model) {
+	@PostMapping("/customer/list")
+	public String customerList(Model model) {
 		List<Customer> customerList = customerSelectService.searchAll();
 		model.addAttribute("customerList", customerList);
-		return "customer/list";
+		return "list";
 	}
 
 	//顧客新規登録画面の表示
-	@GetMapping(value = "/customer/add")
+	@GetMapping("/customer/add")
 	public String displayAdd(Model model) {
 		return "customer/add";
 	}

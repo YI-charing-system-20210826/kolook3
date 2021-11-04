@@ -37,7 +37,7 @@ body {
 				</td>
 
 				<td>
-					<form action="#" th:action="@{/customer/list}" method="post">
+					<form action="#" th:action="@{/customer/list}" th:cbject="${customerList}" method="post">
 						<input type="submit" value="顧客一覧画面へ" />
 					</form>
 
