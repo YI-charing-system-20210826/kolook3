@@ -19,24 +19,26 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.sun.istack.NotNull;
-
 @Entity
 
-@Table(name = "customer")
+@Table(name = "accounts")
 public class Customer implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 	
 	
-	@Column(name="customer_id")
+	/*@Column(name="customer_id")
 	@NotNull
-	private int customer_id;
+	private int customer_id;*/
+	
+	@ElementCollection(fetch = FetchType.EAGER)
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private Set<Authority> authorities;
 
 	@Id
 	@Column(nullable = false)
@@ -61,13 +63,10 @@ public class Customer implements UserDetails {
 		ROLE_USER, ROLE_MANAGER, ROLE_ADMIN
 	}
 
-	@ElementCollection(fetch = FetchType.EAGER)
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private Set<Authority> authorities;
+	
 	
 
-	@Column(name = "last_name")
+	/*@Column(name = "last_name")
 	@NotNull
 	private String last_name;
 	
@@ -117,14 +116,14 @@ public class Customer implements UserDetails {
 	private String remarks;
 	
 	@Column(name = "contract_flg")
-	private String contract_flg;
+	private String contract_flg;*/
 
 	// JPA requirement
 	protected Customer() {
 	}
 	
 	//一覧表示用のコンストラクタ
-	public Customer(int customer_id,String last_name,String first_name,String last_name_Kana,String first_name_Kana,String gender,Date birthday,int tel_no,String email,int post_no,String ken_code,String address,String address_detail,String remarks,String contract_flg) {
+	/*public Customer(int customer_id,String last_name,String first_name,String last_name_Kana,String first_name_Kana,String gender,Date birthday,int tel_no,String email,int post_no,String ken_code,String address,String address_detail,String remarks,String contract_flg) {
 		this.customer_id = customer_id;
 		this.last_name = last_name;
 		this.first_name = first_name;
@@ -140,7 +139,7 @@ public class Customer implements UserDetails {
 		this.address_detail = address_detail;
 		this.remarks = remarks;
 		this.contract_flg = contract_flg;
-	}
+	}*/
 
 	//コンストラクタ
 	public Customer(String username, String password, String mailAddress) {

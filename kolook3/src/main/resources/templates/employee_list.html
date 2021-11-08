@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8" />
+<title>従業員情報一覧</title>
 </head>
 <body>
-
+	<div class="container">
+		<h1>従業員情報一覧</h1>
+		<div class="float-end">
+			<a th:href="@{/employee_add}" class="btn btn-primary">新規登録はこちら</a>
+		</div>
+	</div>
 </body>
 </html>
