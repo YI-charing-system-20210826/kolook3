@@ -44,7 +44,7 @@ public class CustomerService implements UserDetailsService {
 	}
 
 
-  
+
     @Transactional
     public void registerAdmin(String username, String password, String mailAddress) {
     	Customer user = new Customer(username,passwordEncoder.encode(password),mailAddress);

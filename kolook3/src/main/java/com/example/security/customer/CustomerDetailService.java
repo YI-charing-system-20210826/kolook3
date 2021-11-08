@@ -1,5 +1,5 @@
 package com.example.security.customer;
 
-public class CustmerDetailService {
+public class CustomerDetailService {
 
 }
