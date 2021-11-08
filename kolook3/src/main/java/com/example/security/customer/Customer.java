@@ -19,33 +19,33 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.sun.istack.NotNull;
 
 @Entity
 
-@Table(name = "accounts")
+@Table(name = "customer")
 public class Customer implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
-
-	//権限は一般ユーザ、マネージャ、システム管理者の３種類とする
-	public enum Authority {
-		ROLE_USER, ROLE_MANAGER, ROLE_ADMIN
-	}
+	
+	
+	@Column(name="customer_id")
+	@NotNull
+	private int customer_id;
 
 	@Id
-
-    //@Column:Entityクラス内で定義したカラム名に相当するメンバ変数に付与する。
-	@Column(nullable = false, unique = true)
-	private String username;
+	@Column(nullable = false)
+	private String username; //ログインに使用
 
 	@Column(nullable = false)
-	private String password;
+	private String password; //ログインに使用
 
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String mailAddress;
 
 	@Column(nullable = false)
@@ -57,16 +57,89 @@ public class Customer implements UserDetails {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
 
-	// roleは複数管理できるように、Set<>で定義。
-	//@ElementCollection:CollectionをEntityの属性として使用する。
-	//@Enumerated:Enumの値をDBに格納するアノテーション。
+	public enum Authority {
+		ROLE_USER, ROLE_MANAGER, ROLE_ADMIN
+	}
+
 	@ElementCollection(fetch = FetchType.EAGER)
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private Set<Authority> authorities;
+	
+
+	@Column(name = "last_name")
+	@NotNull
+	private String last_name;
+	
+	@Column(name = "first_name")
+	@NotNull
+	private String first_name;
+	
+	@Column(name = "last_name_Kana")
+	@NotNull
+	private String last_name_Kana;
+	
+	@Column(name = "first_name_Kana")
+	@NotNull
+	private String first_name_Kana;
+	
+	@Column(name = "gender")
+	@NotNull
+	private String gender;
+	
+	@Column(name = "birthday")
+	@NotNull
+	@DateTimeFormat(pattern="yyyy/MM/dd")
+	private Date birthday;
+	
+	@Column(name="tel_no")
+	private int tel_no;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name="post_no")
+	private int post_no;
+	
+	@Column(name = "ken_code")
+	@NotNull
+	private String ken_code;
+	
+	@Column(name = "address")
+	@NotNull
+	private String address;
+	
+	@Column(name = "address_detail")
+	@NotNull
+	private String address_detail;
+	
+	@Column(name = "remarks")
+	private String remarks;
+	
+	@Column(name = "contract_flg")
+	private String contract_flg;
 
 	// JPA requirement
 	protected Customer() {
+	}
+	
+	//一覧表示用のコンストラクタ
+	public Customer(int customer_id,String last_name,String first_name,String last_name_Kana,String first_name_Kana,String gender,Date birthday,int tel_no,String email,int post_no,String ken_code,String address,String address_detail,String remarks,String contract_flg) {
+		this.customer_id = customer_id;
+		this.last_name = last_name;
+		this.first_name = first_name;
+		this.last_name_Kana = last_name_Kana;
+		this.first_name_Kana = first_name_Kana;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.tel_no = tel_no;
+		this.email = email;
+		this.post_no = post_no;
+		this.ken_code = ken_code;
+		this.address = address;
+		this.address_detail = address_detail;
+		this.remarks = remarks;
+		this.contract_flg = contract_flg;
 	}
 
 	//コンストラクタ
