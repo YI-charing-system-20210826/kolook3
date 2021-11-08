@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>メニュー画面</title>
+<link rel="stylesheet" type="text/css" href="./static/top.css">
 <style>
 body {
 	background-image:
@@ -13,7 +14,6 @@ body {
 	font-weight: 200;
 	text-align: center;
 }
-
 </style>
 </head>
 <body class="body">
@@ -28,24 +28,25 @@ body {
 		<p>
 			権限: <span sec:authentication="principal.authorities"></span>
 		</p>
-		<table>
-			<tr>
-				<td>
-					<form action="#" th:action="@{/logout}" method="post">
-						<input type="submit" value="ログアウト" />
-					</form>
-				</td>
-
-				<td>
-					<form action="#" th:action="@{/customer/list}" th:cbject="${customerList}" method="post">
-						<input type="submit" value="顧客一覧画面へ" />
-					</form>
-
-				</td>
-			</tr>
-		</table>
-
+			<table style="margin:auto;">
+					<tr>
+						<td>
+							<form action="#" th:action="@{/logout}" method="post">	
+								<input type="submit" value="ログアウト" />
+							</form>
+						</td>
+						<td>
+							<form action="#" th:action="@{/customer/list}" th:cbject="${customerList}" method="post">
+								<input type="submit" value="顧客一覧画面へ" />
+							</form>
+						</td>	
+						<td>
+							<form action="#" th:action="@{/employee/employee_list}" th:cbject="${employee_List}" method="post">
+								<input type="submit" value="従業員一覧画面へ" />
+							</form>
+						</td>
+					</tr>
+			</table>
 	</div>
-
 </body>
 </html>
