@@ -15,7 +15,7 @@ public class CustomerController {
 
 	@Autowired
 	private CustomerRepository repository;
-	
+
 	@Autowired
 	private CustomerSelectService customerSelectService;
 
@@ -44,15 +44,19 @@ public class CustomerController {
 	}
 
 	//顧客新規登録画面の表示
-	@GetMapping("/customer/add")
+	@GetMapping(value= "/customer/add")
 	public String displayAdd(Model model) {
+		//model.addAttribute("cusutomerRequest",new CustomerRequest());
 		return "customer/add";
 	}
 
+	//ユーザー新規登録
+
+
 	//顧客情報詳細画面の表示
 	@GetMapping("/customer/{id}")
-	public String displayView(@PathVariable Long id, Model model) {
-		return "customer/view";
+	public String displayDetail(@PathVariable Long id, Model model) {
+		return "customer/detail";
 	}
 
 	//投稿の処理、新しいデータを登録したりする。
