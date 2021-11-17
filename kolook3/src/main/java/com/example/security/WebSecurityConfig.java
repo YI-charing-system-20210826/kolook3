@@ -9,14 +9,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.example.security.customer.CustomerService;
+import com.example.security.account.AccountService;
 
 //@EnableWebSecurity:SpringSecurityを有効にしている。
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private CustomerService userService;
+	private AccountService userService;
     //HttpSecurityのconfigureメソッドでURLごとのセキュリティ設定を行う。
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
