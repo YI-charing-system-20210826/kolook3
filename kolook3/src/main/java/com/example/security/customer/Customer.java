@@ -3,15 +3,19 @@ package com.example.security.customer;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.sun.istack.NotNull;
 
+@Entity
 @Table(name = "customer")
 public class Customer {
 
+	@Id
 	@Column(name = "customer_id")
 	@NotNull
 	private int customer_id;
@@ -72,7 +76,7 @@ public class Customer {
 	protected Customer() {
 	}
 
-	//一覧表示用のコンストラクタ
+	/*//一覧表示用のコンストラクタ
 	public Customer(int customer_id, String last_name, String first_name, String last_name_Kana, String first_name_Kana,
 			String gender, Date birthday, int tel_no, String email, int post_no, String ken_code, String address,
 			String address_detail, String remarks, String contract_flg) {
@@ -92,5 +96,6 @@ public class Customer {
 		this.remarks = remarks;
 		this.contract_flg = contract_flg;
 	}
-
+	
+	*/
 }

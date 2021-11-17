@@ -11,19 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class EmployeeController {
 
 	@Autowired
-	private EmployeeRepository repository;
+	private EmployeeService employeeService;
 
-	@Autowired
-	private EmployeeSelectService employeeSelectService;
-
-	public List<Employee> get() {
-		return (List<Employee>) repository.findAll();
-	}
 
 	//従業員情報一覧画面
 	@PostMapping("/employee_list")
 	public String employeeList(Model model) {
-		List<Employee> employeeList = employeeSelectService.searchAll();
+		List<Employee> employeeList = employeeService.searchAll();
 		model.addAttribute("employeeList",employeeList);
 		return "employee_list";
 	}

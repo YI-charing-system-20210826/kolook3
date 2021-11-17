@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -9,7 +10,7 @@
 		<h1>ユーザー情報一覧</h1>
 		<div class="float-end">
 			<a th:href="@{/employee_add}" class="btn btn-primary">新規登録はこちら</a>
-		</div>
+		</div> 
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -18,7 +19,7 @@
 					<th>名</th>
 					<th>セイ</th>
 					<th>メイ</th>
-					<th>性別</th>
+					<!-- <th>性別</th>
 					<th>生年月日</th>
 					<th>電話番号</th>
 					<th>メールアドレス</th>
@@ -27,19 +28,19 @@
 					<th>市区町村</th>
 					<th>番地以降</th>
 					<th>備考欄</th>
-					<th>契約フラグ</th>
+					<th>契約フラグ</th> -->
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="employee : ${employeelist}" th:object="${employeelist}"
+				<tr th:each="employee : ${employeelist}" th:object="${employee}"
 					class="align-middle">
-					<td th:text="*{customer_id}"></td>
-					<td th:text="*{last_name}"></td>
-					<td th:text="*{first_name}"></td>
-					<td th:text="*{last_name_Kana}"></td>
-					<td th:text="*{first_name_Kana}"></td>
-					<td th:text="*{gender}"></td>
+					<td th:text="*{username}"></td>
+					<td th:text="*{password}"></td>
+					<td th:text="*{mailaddress}"></td>
+					<td th:text="*{mailAddressVerified}"></td>
+					<td th:text="*{enabled}"></td>
+					<!-- <td th:text="*{gender}"></td>
 					<td th:text="*{birthday}"></td>
 					<td th:text="*{tel_no}"></td>
 					<td th:text="*{email}"></td>
@@ -48,7 +49,7 @@
 					<td th:text="*{address}"></td>
 					<td th:text="*{address_detail}"></td>
 					<td th:text="*{remarks}"></td>
-					<td th:text="*{contract_flg}"></td>
+					<td th:text="*{contract_flg}"></td> -->
 					<td><a th:href="@{/customer/{id}(id=*{id})}"
 						class="btn btn-secondary">詳細</a></td>
 				</tr>

@@ -19,43 +19,16 @@ public class AccountController {
 		return (List<Account>) repository.findAll();
 	}
 
-	//全体処理の入り口
 	@RequestMapping("/")
 	public String index() {
 		return "redirect:/top";
 	}
 
-	//取得の処理/loginデータを取ってくる。
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
 
-	/*//顧客情報一覧画面
-	@PostMapping("/customer/list")
-	public String customerList(Model model) {
-		List<Customer> customerList = customerSelectService.searchAll();
-		model.addAttribute("customerList", customerList);
-		return "list";
-	}
-	
-	//顧客新規登録画面の表示
-	@GetMapping(value= "/customer/add")
-	public String displayAdd(Model model) {
-		//model.addAttribute("cusutomerRequest",new CustomerRequest());
-		return "customer/add";
-	}
-	
-	//ユーザー新規登録
-	
-	
-	//顧客情報詳細画面の表示
-	@GetMapping("/customer/{id}")
-	public String displayDetail(@PathVariable Long id, Model model) {
-		return "customer/detail";
-	}*/
-
-	//投稿の処理、新しいデータを登録したりする。
 	@PostMapping("/login")
 	public String loginPost() {
 		return "redirect:/login-error";
