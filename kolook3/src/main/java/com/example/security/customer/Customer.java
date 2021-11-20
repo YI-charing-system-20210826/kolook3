@@ -76,6 +76,76 @@ public class Customer {
 	protected Customer() {
 	}
 
+	public void setLast_name(Object last_name2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setFirst_name(Object first_name2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setLast_name_Kana(Object last_name_Kana2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setFirst_name_Kana(Object first_name_Kana2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setGender(Object gender2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setBirthday(Object birthday2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setTel_no(Object tel_no2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setEmail(Object email2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setPost_no(Object post_no2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setKen_code(Object ken_code2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setAddress(Object address2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setAddress_detail(Object address_detail2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setRemarks(Object remarks2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+	public void setContract_flg(Object contract_flg2) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
 	/*//一覧表示用のコンストラクタ
 	public Customer(int customer_id, String last_name, String first_name, String last_name_Kana, String first_name_Kana,
 			String gender, Date birthday, int tel_no, String email, int post_no, String ken_code, String address,
