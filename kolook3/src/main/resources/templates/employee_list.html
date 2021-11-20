@@ -35,7 +35,7 @@
 			<tbody>
 				<tr th:each="employee : ${employeelist}" th:object="${employee}"
 					class="align-middle">
-					<td th:if="${username]"></td>
+					<td th:text="*{username}"></td>
 					<td th:text="*{password}"></td>
 					<td th:text="*{mailaddress}"></td>
 					<td th:text="*{mailAddressVerified}"></td>
