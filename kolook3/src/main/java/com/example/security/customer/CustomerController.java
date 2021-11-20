@@ -22,11 +22,12 @@ public class CustomerController {
 		return "list";
 	}
 
-	@GetMapping(value = "/customer/add")
-	public String displayAdd(Model model) {
-		//model.addAttribute("cusutomerRequest",new CustomerRequest());
-		return "customer/add";
-	}
+	//顧客新規登録画面の表示
+		@GetMapping(value="/customer/list/add")
+		public String displayAdd(Model model) {
+			model.addAttribute("cusutomerRequest", new CustomerRequest());
+			return "add";
+		}
 
 	@GetMapping("/customer/{id}")
 	public String displayDetail(@PathVariable Long id, Model model) {
