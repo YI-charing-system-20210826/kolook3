@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
 
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	EmployeeRepository employeeRepository;
 
 	public List<Employee> searchAll() {
 		return employeeRepository.findAll();

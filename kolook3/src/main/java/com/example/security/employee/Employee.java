@@ -1,6 +1,5 @@
 package com.example.security.employee;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,7 +12,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Data
 @Table(name = "employee")
-public class Employee implements Serializable{
+public class Employee{
 
 	@Id
 
@@ -40,7 +39,7 @@ public class Employee implements Serializable{
 	protected Employee() {
 	}
 	
-	//コンストラクタ
+	/*//コンストラクタ
 	public Employee(String username, String password, String mailAddress) {
 		this.username = username;
 		this.password = password;
@@ -91,6 +90,6 @@ public class Employee implements Serializable{
 	
 	public Date getCreatedAt() {
 		return createdAt;
-	}
+	}*/
 	
 }
