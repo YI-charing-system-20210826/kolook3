@@ -30,7 +30,7 @@ public class CustomerController {
 	}
 
 	//顧客新規登録画面の表示
-	@GetMapping(value = "/customer/list/add")
+	@GetMapping(value = "/customer/add")
 	public String displayAdd(Model model) {
 		model.addAttribute("customerRequest", new CustomerRequest());
 		return "add";

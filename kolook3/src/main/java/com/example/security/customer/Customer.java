@@ -21,15 +21,15 @@ public class Customer implements Serializable {
 	@Id
 	@Column(name = "customer_id")
 	@NotNull
-	public int customer_id;
+	private int customer_id;
 
 	@Column(name = "last_name")
 	@NotNull
-	public String last_name;
+	private String last_name;
 
 	@Column(name = "first_name")
 	@NotNull
-	public String first_name;
+	private String first_name;
 
 	@Column(name = "last_name_Kana")
 	@NotNull
@@ -49,7 +49,7 @@ public class Customer implements Serializable {
 	private Date birthday;
 
 	@Column(name = "tel_no")
-	public int tel_no;
+	private int tel_no;
 
 	@Column(name = "email")
 	private String email;
@@ -103,21 +103,28 @@ public class Customer implements Serializable {
 		public void setCustomer_id(int customer_id) {
 			this.customer_id = customer_id;
 		}
-		public int getCusotomer_id() {
+		public int getCustomer_id() {
 		return customer_id;
 		}
 
-
-
-	public void setLast_name(Object last_name2) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	public void setFirst_name(Object first_name2) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
+		public void setLast_name(String last_name) {
+			this.last_name = last_name;
+		}
+		public String getLast_name() {
+		return last_name;
+		}
+		public void setFirst_name(String first_name) {
+			this.first_name = first_name;
+		}
+		public String getFirst_name() {
+		return first_name;
+		}
+		public void setTel_no(int tel_no) {
+			this.tel_no = tel_no;
+		}
+		public int getTel_no() {
+		return tel_no;
+		}
 
 	public void setLast_name_Kana(Object last_name_Kana2) {
 		// TODO 自動生成されたメソッド・スタブ
@@ -135,11 +142,6 @@ public class Customer implements Serializable {
 	}
 
 	public void setBirthday(Object birthday2) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	public void setTel_no(Object tel_no2) {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
