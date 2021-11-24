@@ -1,2 +1,2 @@
---INSERT INTO customer (customer_id,username,password,last_name,first_name,last_name_Kana,first_name_Kana,gender,birthday,tel_no,email,post_no,ken_code,address,address_detail,remarks,contract_flg) 
---VALUES ('1','junya','secret','梅村','潤也','ウメムラ','ジュンヤ','1','1994/08/18','080-6946-4705','junya@gmail.com','465-0065','愛知県','名古屋市名東区','梅森坂4005'.'テスト','0');
+INSERT INTO customer (customer_id,last_name,first_name,last_name_Kana,first_name_Kana,gender,birthday,tel_no,email,post_no,ken_code,address,address_detail,remarks,contract_flg)
+VALUES ('1','梅村','潤也','ウメムラ','ジュンヤ','1','1994/08/18','080694','junya@gmail.com','4650065','愛知県','名古屋市名東区','梅森坂4005','テスト','1');
