@@ -6,19 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class CustomerService {
-	
+
 	@Autowired
 	private CustomerRepository customerRepository;
-	
+
 	public List<Customer> searchAll() {
 		return customerRepository.findAll();
 	}
-	
+
 	public void create(CustomerRequest customerRequest) {
 	    Customer customer = new Customer();
+	    customer.setCustomer_id(customerRequest.getCusotmer_id());
 	    customer.setLast_name(customerRequest.getLast_name());
 	    customer.setFirst_name(customerRequest.getFirst_name());
 	    customer.setLast_name_Kana(customerRequest.getLast_name_Kana());

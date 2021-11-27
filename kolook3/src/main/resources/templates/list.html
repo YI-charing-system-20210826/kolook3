@@ -11,25 +11,26 @@
 	<div class="container">
 		<h1 style= "border-bottom:3px dotted #000;">顧客一覧</h1>
 		<div class="float-end">
-			<a th:href="@{/employee_add}" class="btn btn-primary">新規登録はこちら</a>
+			<a th:href="@{/customer/add}" class="btn btn-primary">新規登録はこちら</a>
 		</div>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>顧客名</th>					
-					<th>電話番号</th>	
+					<th>顧客名</th>
+					<th>電話番号</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="customer : ${customerlist}" th:object="${customerlist}"
+				<tr th:each="customer : ${customerlist}" th:object="${customer}"
 					class="align-middle">
 					<td th:text="*{customer_id}"></td>
-					<td th:text="*{first_name}&&*{last_name}"></td>
+					<td th:text="*{last_name}"></td>
+					<!-- <td th:text="*{first_name}&&*{last_name}"></td> -->
 					<td th:text="*{tel_no}"></td>
-					<td><a th:href="@{/customer/{id}(id=*{id})}"
-						class="btn btn-secondary">詳細</a></td>
+					<!-- <td><a th:href="@{/customer/{id}(id=*{id})}"
+						class="btn btn-secondary">詳細</a></td> -->
 				</tr>
 			</tbody>
 		</table>

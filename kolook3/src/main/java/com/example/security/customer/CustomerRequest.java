@@ -21,13 +21,13 @@ public class CustomerRequest implements Serializable {
 	 */
 	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
 	private String phone;
-	
-	public Object getLast_name() {
+
+	public String getLast_name() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
-	public Object getFirst_name() {
+	public String getFirst_name() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
@@ -57,9 +57,9 @@ public class CustomerRequest implements Serializable {
 		return null;
 	}
 
-	public Object getTel_no() {
+	public int getTel_no() {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return 0;
 	}
 
 	public Object getPost_no() {
@@ -90,5 +90,10 @@ public class CustomerRequest implements Serializable {
 	public Object getContract_flg() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
+	}
+
+	public int getCusotmer_id() {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
 	}
 }

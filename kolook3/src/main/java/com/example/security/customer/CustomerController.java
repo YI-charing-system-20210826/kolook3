@@ -23,16 +23,16 @@ public class CustomerController {
 	private CustomerService customerService;
 
 	@PostMapping("/customer/list")
-	public String customerList(Model model) {
-		List<Customer> customerList = customerService.searchAll();
-		model.addAttribute("customerList", customerList);
+	public String customerlist(Model model) {
+		List<Customer> customerlist = customerService.searchAll();
+		model.addAttribute("customerlist", customerlist);
 		return "list";
 	}
 
 	//顧客新規登録画面の表示
-	@GetMapping(value = "/customer/list/add")
+	@GetMapping(value = "/customer/add")
 	public String displayAdd(Model model) {
-		model.addAttribute("cusutomerRequest", new CustomerRequest());
+		model.addAttribute("customerRequest", new CustomerRequest());
 		return "add";
 	}
 
