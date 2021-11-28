@@ -38,7 +38,7 @@ public class Employee{
 	//JPA requirement
 	protected Employee() {
 	}
-	
+
 	/*//コンストラクタ
 	public Employee(String username, String password, String mailAddress) {
 		this.username = username;
@@ -47,49 +47,49 @@ public class Employee{
 		this.mailAddressVerified = false;
 		this.enabled = true;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
-	
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public boolean isEnabled() {
 		return this.enabled;
 	}
-	
+
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
+
 	public String getMailAddress() {
 		return mailAddress;
 	}
-	
+
 	public void setMailAddress(String mailAddress) {
 		this.mailAddress = mailAddress;
 	}
-	
+
 	public boolean isMailAddressVerified() {
 		return mailAddressVerified;
 	}
-	
+
 	public void setMailAddressVerified(boolean mailAddressVerified) {
 		this.mailAddressVerified = mailAddressVerified;
 	}
-	
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}*/
-	
+
 }
