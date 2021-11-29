@@ -14,7 +14,7 @@ address VARCHAR(128) NOT NULL,
 address_detail VARCHAR(128) NOT NULL,
 remarks VARCHAR(300),
 contract_flg int
-,PRIMARY KEY (customer_id)
+--,PRIMARY KEY (customer_id)
 );
 
 --CREATE TABLE IF NOT EXISTS employee(
