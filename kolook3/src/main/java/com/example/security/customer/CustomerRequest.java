@@ -1,6 +1,7 @@
 package com.example.security.customer;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -22,78 +23,49 @@ public class CustomerRequest implements Serializable {
 	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
 	private String phone;
 
-	public String getLast_name() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public String getFirst_name() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getLast_name_Kana() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getFirst_name_Kana() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getGender() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getBirthday() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getEmail() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public int getTel_no() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-
-	public Object getPost_no() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getAddress() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getKen_code() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getAddress_detail() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getRemarks() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Object getContract_flg() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public int getCusotmer_id() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
+		public int getCusotmer_id() {
+		  return 0;
+		 }
+		 public String getLast_name() {
+		  return null;
+		 }
+		 public String getFirst_name() {
+		  return null;
+		 }
+		 public String getLast_name_Kana() {
+		  return null;
+		 }
+		 public String getFirst_name_Kana() {
+		  return null;
+		 }
+		 public String getGender() {
+		  return null;
+		 }
+		 public Date getBirthday() {
+		  return null;
+		 }
+		 public int getTel_no() {
+		  return 0;
+		 }
+		 public String getEmail() {
+		  return null;
+		 }
+		 public int getPost_no() {
+		  return 0;
+		 }
+		 public String getKen_code() {
+		  return null;
+		 }
+		 public String getAddress() {
+		  return null;
+		 }
+		 public String getAddress_detail() {
+		  return null;
+		 }
+		 public String getRemarks() {
+		  return null;
+		 }
+		 public int getContract_flg() {
+		  return 0;
+		 }
 }
