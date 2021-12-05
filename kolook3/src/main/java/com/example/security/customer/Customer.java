@@ -189,4 +189,18 @@ public class Customer implements Serializable {
   public String getAddress_detail() {
   return address_detail;
   }
+  public void setRemarks(String remarks) {
+  this.remarks = remarks;
+   }
+
+  public String getRemarks() {
+  return remarks;
+   }
+
+  public void setContract_flg(int contract_flg) {
+  this.contract_flg = contract_flg;
+  }
+  public int getContract_flg() {
+  return contract_flg;
+  }
 }
