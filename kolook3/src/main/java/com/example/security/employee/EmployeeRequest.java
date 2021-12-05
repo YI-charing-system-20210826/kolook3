@@ -23,6 +23,11 @@ public class EmployeeRequest implements Serializable {
 	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
 	private String phone;
 
+	public int getMember_id() {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
+	}
+
 	public String getLast_name() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
@@ -43,17 +48,17 @@ public class EmployeeRequest implements Serializable {
 		return null;
 	}
 
-	public String getGender() {
+	public String getEmp_status() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
-	public Date getBirthday() {
+	public String getSection() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
-	public String getEmail() {
+	public String getPosition() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
@@ -63,17 +68,22 @@ public class EmployeeRequest implements Serializable {
 		return 0;
 	}
 
+	public String getEmail() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
 	public int getPost_no() {
 		// TODO 自動生成されたメソッド・スタブ
 		return 0;
 	}
 
-	public String getAddress() {
+	public String getKen_code() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
-	public String getKen_code() {
+	public String getAddress() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
@@ -83,7 +93,57 @@ public class EmployeeRequest implements Serializable {
 		return null;
 	}
 
-	public Object getRemarks() {
+	public Date getBirthday() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public String getGender() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public int getJoin_at() {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
+	}
+
+	public int getLeave_at() {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
+	}
+
+	public int getRole() {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
+	}
+
+	public String getPassword() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public String getMember_img() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public Date getCreated_at() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public Date getUpdated_at() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public Date getLast_login() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	/*public Object getRemarks() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
@@ -91,10 +151,5 @@ public class EmployeeRequest implements Serializable {
 	public String getContract_flg() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
-	}
+	*/}
 
-	public int getMember_id() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-}
