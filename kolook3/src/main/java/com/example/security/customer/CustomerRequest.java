@@ -32,7 +32,7 @@ public class CustomerRequest implements Serializable {
 		return null;
 	}
 
-	public Object getLast_name_Kana() {
+	public String getLast_name_Kana() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
