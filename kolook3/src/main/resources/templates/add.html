@@ -107,6 +107,12 @@
 	        <input th:type="radio" th:field="*{Gender}" value="男">男性
 	        <input th:type="radio" th:field="*{Gender}" value="女">女性
 	      </div>
+	      <div style="padding-bottom: 15px;">
+	        <label>備考：</label>
+	        <textarea th:field="*{remarks}" style="width: 400px; height: 50px;">
+	        </textarea>
+	      </div>
+	      <input th:type="hidden" th:field="*{contract_flg}" value="0">
 			<br />
 			<div class="text-center">
 				<a href="/customer/list" class="btn btn-secondary">キャンセル</a> <input
