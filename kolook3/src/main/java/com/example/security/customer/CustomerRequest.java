@@ -1,94 +1,102 @@
 package com.example.security.customer;
 
 import java.io.Serializable;
+import java.sql.Date;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import lombok.Data;
 
+@Data
 public class CustomerRequest implements Serializable {
 
-	@NotEmpty(message = "名前を入力してください")
-	@Size(max = 100, message = "名前は100桁以内で入力してください")
-	private String name;
-	/**
-	 * 住所
-	 */
-	@Size(max = 255, message = "住所は255桁以内で入力してください")
-	private String address;
-	/**
-	 * 電話番号
-	 */
-	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
-	private String phone;
-	
-	public Object getLast_name() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+//	@NotEmpty(message = "名前を入力してください")
+//	@Size(max = 100, message = "名前は100桁以内で入力してください")
+//	private String name;
+//	/**
+//	 * 住所
+//	 */
+//	@Size(max = 255, message = "住所は255桁以内で入力してください")
+//	private String address;
+//	/**
+//	 * 電話番号
+//	 */
+//	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
+//	private String phone;
 
-	public Object getFirst_name() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private Long customer_id;
 
-	public Object getLast_name_Kana() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 
-	public Object getFirst_name_Kana() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String last_name;
 
-	public Object getGender() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String first_name;
 
-	public Object getBirthday() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String last_name_Kana;
 
-	public Object getEmail() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String first_name_Kana;
 
-	public Object getTel_no() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String gender;
 
-	public Object getPost_no() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private Date birthday;
 
-	public Object getAddress() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private int tel_no;
 
-	public Object getKen_code() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String email;
 
-	public Object getAddress_detail() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private int post_no;
 
-	public Object getRemarks() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String ken_code;
 
-	public Object getContract_flg() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+	 private String address;
+
+	 private String address_detail;
+
+	 private String remarks;
+
+	 private int contract_flg;
+
+
+//		public int getCusotmer_id() {
+//		  return 0;
+//		 }
+//		 public String getLast_name() {
+//		  return null;
+//		 }
+//		 public String getFirst_name() {
+//		  return null;
+//		 }
+//		 public String getLast_name_Kana() {
+//		  return null;
+//		 }
+//		 public String getFirst_name_Kana() {
+//		  return null;
+//		 }
+//		 public String getGender() {
+//		  return null;
+//		 }
+//		 public Date getBirthday() {
+//		  return null;
+//		 }
+//		 public int getTel_no() {
+//		  return 0;
+//		 }
+//		 public String getEmail() {
+//		  return null;
+//		 }
+//		 public int getPost_no() {
+//		  return 0;
+//		 }
+//		 public String getKen_code() {
+//		  return null;
+//		 }
+//		 public String getAddress() {
+//		  return null;
+//		 }
+//		 public String getAddress_detail() {
+//		  return null;
+//		 }
+//		 public String getRemarks() {
+//		  return null;
+//		 }
+//		 public int getContract_flg() {
+//		  return 0;
+//		 }
 }
