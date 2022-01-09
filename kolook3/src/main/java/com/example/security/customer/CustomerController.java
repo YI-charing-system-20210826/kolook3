@@ -36,8 +36,8 @@ public class CustomerController {
 		return "add";
 	}
 
-	@RequestMapping(value = "/customer/create", method = RequestMethod.POST)
-	public String craete(@Validated @ModelAttribute CustomerRequest customerRequest, BindingResult result,
+	@RequestMapping(value ="/customer/create", method = RequestMethod.POST)
+	public String create(@Validated @ModelAttribute CustomerRequest customerRequest, BindingResult result,
 			Model model) {
 		if (result.hasErrors()) {
 			List<String> errorList = new ArrayList<String>();
@@ -48,7 +48,7 @@ public class CustomerController {
 			return "add";
 		}
 		customerService.create(customerRequest);
-		return "redirect:/list";
+		return "redirect:/customer/list";
 	}
 
 	@GetMapping("/customer/{id}")

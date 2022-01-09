@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,22 +23,20 @@ public class Customer implements Serializable {
 
  @Id
  @Column(name = "customer_id")
- private int customer_id;
+ @GeneratedValue(strategy = GenerationType.IDENTITY)
+ private Long customer_id;
 
  @Column(name = "last_name")
 
  private String last_name;
 
  @Column(name = "first_name")
- @NotNull
  private String first_name;
 
  @Column(name = "last_name_Kana")
- @NotNull
  private String last_name_Kana;
 
  @Column(name = "first_name_Kana")
- @NotNull
  private String first_name_Kana;
 
  @Column(name = "gender")
@@ -65,7 +65,6 @@ public class Customer implements Serializable {
  private String address;
 
  @Column(name = "address_detail")
- @NotNull
  private String address_detail;
 
  @Column(name = "remarks")
