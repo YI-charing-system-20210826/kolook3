@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+h1, p, ul{
+  margin:0;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  height: 100px;
+  background-color: steelblue;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.075);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  position: fixed;
+  box-sizing: border-box;
+  padding: 0 50px;
+  background: linear-gradient(to top, #0028b960);
+  color: white;
+  transition: 0.3s; /* なめらか変化 */
+}
+
+
+header:hover {
+  box-shadow: none; /* カーソル時の影消去 */
+  color: black;
+}
+
+.font-color-white{
+  color: white;
+}
+
+.header-large-box{
+	width: 100%;
+}
+
+/* ヘッダー上部 */
+.header-upper{
+	display: flex;
+	justify-content: space-between;
+	height: 60px;
+}
+
+.header-user-name{
+	padding-top: 20px;
+}
+
+  /* //ヘッダーユーザー名 */
+/* // ヘッダー上部 */
+
+/* ヘッダー下部 */
+.lower{
+  clear: both;
+  height: 40px;
+}
+
+.header-menu-ul{
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  height: 42px;
+}
+
+.header-menu-list{
+  width: 25%;
+  height: 36px;
+  text-align: center;
+}
+
+.header-menu-link{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu-ul li+li{
+  border-left: 1px solid white;
+}
+
+  /* hover時 */
+  .header-menu-link:hover{
+    background-color: white;
+    color: #000066;
+  }
+  /* //hover時 */
+/* //ヘッダー下部 */

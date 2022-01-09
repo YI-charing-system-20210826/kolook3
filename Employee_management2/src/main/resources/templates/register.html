@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>従業員登録</title>
+</head>
+<body>
+	<div th:fragment="register_contents">
+		<div  class="contents">
+			<div>
+				<h1>ユーザー登録</h1>
+			</div>
+			<form method="Post" th:action="@{/register}" th:object="${employee}"  class="employee-form">
+				<table class="employee-form-table employee-data-form">
+					<!-- ログインで使用するユーザーネーム -->
+					<tr>
+						<th>ユーザーネーム</th>
+						<td>
+							<input type="text"  th:field="*{username}" class="input-data">
+						</td>
+					</tr>
+
+					<!-- ログインで使用するパスワード -->
+					<tr>
+						<th>パスワード</th>
+						<td>
+							<input type="text"  th:field="*{password}" class="input-data">
+						</td>
+					</tr>
+
+					<!-- 企業コード -->
+					<tr>
+						<th>企業コード</th>
+						<td>
+							<input type="text" th:field="*{companyCode}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 従業員名 name-->
+					<tr>
+						<th>従業員名</th>
+						<td>
+							<input type="text" th:field="*{employeeName}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 性別 sex-->
+					<tr>
+						<th>性別</th>
+						<td class="radio-form">
+							<div th:each="sex : ${radioSex}">
+								<input type="radio" name="sex"
+									th:text="${sex.key}"
+									th:value="${sex.value}"
+									th:field="*{sex}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- 生年月日 birthday-->
+					<tr>
+						<th>生年月日</th>
+						<td>
+							<input type="text" placeholder="yyyy/mm/dd" th:field="*{birthday}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 年齢 age-->
+					<tr>
+						<th>年齢</th>
+						<td>
+							<input type="text" th:field="*{age}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 郵便番号 zip_code -->
+					<tr>
+						<th>郵便番号</th>
+						<td>
+							<input type="text" placeholder="000-0000" th:field="*{zipCode}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 都道府県 adress1-->
+					<tr>
+						<th>都道府県</th>
+						<td>
+							<input type="text" th:field="*{address1}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 市区町村 adress2-->
+					<tr>
+						<th>市区町村</th>
+						<td>
+							<input type="text" th:field="*{address2}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 町域名  adress3-->
+					<tr>
+						<th>町域名</th>
+						<td>
+							<input type="text" th:field="*{address3}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 丁目以降 block_name-->
+					<tr>
+						<th>丁目以降</th>
+						<td>
+							<input type="text" th:field="*{blockName}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 電話番号 phone_number-->
+					<tr>
+						<th>電話番号</th>
+						<td>
+							<input type="text" placeholder="08011112222" th:field="*{phoneNumber}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- メールアドレス email-->
+					<tr>
+						<th>メールアドレス</th>
+						<td>
+							<input type="email" placeholder="xxx@xxx.com" th:field="*{email}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 雇用形態 employee_type-->
+					<tr>
+						<th>雇用形態</th>
+						<td>
+							<input type="text" th:field="*{employeeType}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 稼働内容ジャンル employee_type_code-->
+					<tr>
+						<th>稼働内容</th>
+						<td>
+							<input type="text" placeholder="内勤 / SES / 出向　など" th:field="*{employeeTypeCode}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 入社日 enterd_at-->
+					<tr>
+						<th>入社日</th>
+						<td>
+							<input type="text" placeholder="yyyy/MM/dd" th:field="*{enterementAt}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 稼働先 company_depart_code-->
+						<tr>
+							<th>稼働先</th>
+							<td><select name="companyDepart"
+								th:field="*{companyDepartCode}">
+									<option th:each="company_depart : ${companyDepartMap}"
+										th:text="${company_depart.value}"
+										th:value="${company_depart.key}"></option>
+							</select></td>
+						</tr>
+
+					<!-- 稼働開始日 company_depart_enterd_at-->
+					<tr>
+						<th>稼働開始日</th>
+						<td>
+							<input type="text" placeholder="yyyy/MM/dd" th:field="*{companyDepartEnteredAt}"  class="input-data">
+						</td>
+					</tr>
+
+					<!-- 契約完了予定日 company_depart_retired_at-->
+					<tr>
+						<th>契約完了予定</th>
+						<td>
+							<input type="text" placeholder="yyyy/MM/dd" th:field="*{companyDepartRetirementAt}"  class="input-data">
+						</td>
+					</tr>
+				</table>
+
+
+					<!-- 言語 language_code-->
+				<table class="employee-form-table employee-lang-form">
+					<tr>
+						<th>言語</th>
+					</tr>
+
+					<!-- Java -->
+					<tr>
+						<th>Java</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="java"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{java}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- PHP -->
+					<tr>
+						<th>PHP</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="php"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{php}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- JavaScript -->
+					<tr>
+						<th>JavaScript</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="javaScript"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{javaScript}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- mysql -->
+					<tr>
+						<th>mySQL</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="mySQL"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{mysql}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- SE -->
+					<tr>
+						<th>SE</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="SE"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{systemEngeneer}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- python -->
+					<tr>
+						<th>python</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="python"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{python}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- android -->
+					<tr>
+						<th>android</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="android"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{android}">
+							</div>
+						</td>
+					</tr>
+
+					<!-- design -->
+					<tr>
+						<th>デザイン</th>
+						<td class="radio-form">
+							<div th:each="language : ${radioLanguage}" class="form-lang-box">
+								<input type="radio" name="design"
+									th:text="${language.key}"
+									th:value="${language.value}"
+									th:field="*{design}">
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<ul class="error-messages">
+					   <li th:each="error : ${#fields.detailedErrors()}">
+					   <span th:text="${error.message}">Error message</span> -->
+				</ul>
+
+				<input type="submit" value="登録" class="register-btn">
+	 		</form>
+		</div>
+	</div>
+</body>
+</html>

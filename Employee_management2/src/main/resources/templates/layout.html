@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymekeaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link th:href="@{/css/login.css}" rel="stylesheet"></link>
+	<link th:href="@{/css/top.css}" rel="stylesheet"></link>
+	<link th:href="@{/css/header.css}" rel="stylesheet"></link>
+	<link th:href="@{/css/register.css}" rel="stylesheet"></link>
+	<link th:href="@{/css/list.css}" rel="stylesheet"></link>
+	<link th:href="@{/css/layout.css}" rel="stylesheet"></link>
+	<title>テンプレート</title>
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+	<!-- ヘッダー(仮) -->
+    <header>
+      <div class="header-large-box">
+
+        <!-- ヘッダー上部 -->
+        <div class="header-upper">
+
+          <!-- ヘッダー左部 -->
+          <div class="header-left">
+            <!-- サービス名を記載 -->
+            <div class="header-logo-box">
+              <h1 class="header-logo"><a href="#" class="font-color-white">サービス名</a></h1>
+            </div>
+            <!-- //サービス名を記載 -->
+          </div>
+          <!-- //ヘッダー左部 -->
+
+          <!-- ヘッダー右部 -->
+          <div class="header-right">
+            <!-- ログインしているユーザー名(管理者)を表示 -->
+            <div>
+              <p class="header-user-name font-color-white">ユーザー名表示</p>
+            </div>
+            <!-- //ログインしているユーザー名(管理者)を表示 -->
+          </div>
+          <!-- //ヘッダー右部 -->
+        </div>
+        <!-- //ヘッダー上部 -->
+
+        <!-- ヘッダー下部 -->
+        <div class="lower">
+          <div class="header-menu">
+            <!-- 各ページのリンクをリスト化 -->
+            <ul class="header-menu-ul">
+              <!-- トップページリンク -->
+              <li class="header-menu-list">
+                <a th:href="@{'/top'}" class="header-menu-link font-color-white">トップページ</a>
+              </li>
+              <!-- 一覧ページリンク -->
+              <li class="header-menu-list">
+                <a th:href="@{'/list'}" class="header-menu-link font-color-white">従業員一覧</a>
+              </li>
+              <!-- 従業員登録ページリンク -->
+              <li class="header-menu-list">
+                <a th:href="@{'/register'}" class="header-menu-link font-color-white">従業員登録</a>
+              </li>
+              <!-- 管理者登録ページリンク -->
+              <li class="header-menu-list last-menu-list">
+                <a href="#" class="header-menu-link font-color-white">管理者登録</a>
+              </li>
+              <!--  ログアウトページリンク -->
+              <li class="header-menu-list last-menu-list">
+				<div th:if="${#authorization.expression('isAuthenticated()')}">
+                	<form th:action="@{/logout}" method="post">
+                    	<button class="logout-button">ログアウト</button>
+                	</form>
+				</div>
+              </li>
+            </ul>
+            <!-- //各ページのリンクをリスト化 -->
+          </div>
+        </div>
+        <!-- //ヘッダー下部 -->
+      </div>
+    </header>
+    <!-- ヘッダー -->
+
+	<!-- コンテンツ -->
+	<div class="container-fluid">
+		<div th:include="__${contents}__"></div>
+	</div>
+</body>
+</html>

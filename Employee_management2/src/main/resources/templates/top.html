@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>TOP</title>
+</head>
+<body>
+    <!-- 林さん作成 -->
+    <div th:fragment="top_contents">
+  		<div class="contents">
+		    <form action="cgi-bin/example.cgi" method="post">
+		        <input type="search" class="keyword" name="search" size="42" placeholder="キーワードを入力">
+		        <input type="submit" class="button" name="submit" size="20" value="検索">
+		    </form>
+		    <div class="quickConteinar">
+	            <a th:href="@{'/list'}" class="quickink　quickItem1">
+			        <div class="quickItem1">
+			            <i class="fas fa-book-open"></i>
+			            <span class="quickName">従業員一覧</span>
+			        </div>
+	            </a>
+	            <a th:href="@{'/register'}" class="quickink">
+			        <div class="quickItem2">
+			            <i class="fas fa-pen"></i>
+			            <span class="quickName">従業員登録</span>
+			        </div>
+	            </a>
+	            <a href="" class="quickink">
+			        <div class="quickItem3">
+			            <i class="fas fa-key"></i>
+			            <span class="quickName">管理者登録</span>
+			        </div>
+	            </a>
+		    </div>
+		</div>
+	</div>
+</body>
+</html>

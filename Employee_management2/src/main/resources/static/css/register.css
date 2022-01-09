@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/*　登録・編集フォーム */
+.employee-form{
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* フォーム項目部分 */
+.employee-data-table th{
+	width: 200px;
+	text-align: left;
+}
+
+/* 個人情報　フォーム入力部分 */
+.employee-data-table td{
+	width: 300px;
+	text-align: left;
+}
+
+.input-data{
+	width: 200px;
+}
+
+.radio-form{
+	display: flex;
+}
+
+.employee-data-form{
+	float: left;
+}
+
+
+
+/* 言語選択テーブル */
+.employee-lang-form{
+	float: right;
+}
+
+.employee-lang-form th{
+	width: 150px;
+	text-align: left;
+}
+
+.employee-lang-form td{
+	width: 600px;
+}
+
+.form-lang-box{
+	margin-right: 10px;
+}
+
+
+/* エラーメッセージ */
+.error-messages{
+	clear: both;
+}
+
+.register-btn{
+	height: 50px;
+	width: 100px;
+	font-size: 24px;
+}

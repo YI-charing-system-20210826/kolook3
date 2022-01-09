@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://ww.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>一覧</title>
+</head>
+<body>
+	<div th:fragment="list_contents" class="contents">
+		<div class="contents">
+			<h1>一覧</h1>
+			<p th:text = "'総社員数:'+${countEmployee}+'名'"></p>
+			<table>
+				<tr>
+					<th class="table_title">従業員番号</th>
+					<th class="table_title">従業員名</th>
+					<th class="table_title">所属</th>
+					<th class="table_title">稼働先</th>
+					<th class="table_title">リンク</th>
+				</tr>
+				<tr th:each="employee : ${employeeList}">
+					<td th:text="${employee.employeeId}" class="number">
+					<td th:text="${employee.username}" class="name">
+					<td th:text="${employee.companyCode}" class="company">
+					<td th:text="${employee.companyDepartCode}" class="belongs"></td>
+					<td>
+						<a th:href="@{'/employeeDetail/' + ${employee.employeeId}}" class="belinks">詳細</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
