@@ -29,8 +29,8 @@
 					<td th:text="*{last_name}"></td>
 					<!-- <td th:text="*{first_name}&&*{last_name}"></td> -->
 					<td th:text="*{tel_no}"></td>
-					<!-- <td><a th:href="@{/customer/{id}(id=*{id})}"
-						class="btn btn-secondary">詳細</a></td> -->
+					<td><a th:href="@{/customer/{id}(id=*{customer_id})}"
+						class="btn btn-secondary">詳細</a></td>
 				</tr>
 			</tbody>
 		</table>
