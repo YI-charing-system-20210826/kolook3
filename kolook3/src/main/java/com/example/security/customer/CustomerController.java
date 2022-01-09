@@ -53,7 +53,7 @@ public class CustomerController {
 
 	@GetMapping("/customer/{id}")
 	public String displayDetail(@PathVariable Long id, Model model) {
-		return "customer/detail";
+		return "detail";
 	}
 
 }
