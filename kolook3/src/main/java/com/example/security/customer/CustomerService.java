@@ -16,6 +16,15 @@ public class CustomerService {
 	public List<Customer> searchAll() {
 		return customerRepository.findAll();
 	}
+	
+	public void delete(Long id) {
+	    Customer customer = findById(id);
+	    customerRepository.delete(customer);
+	  }
+
+	private Customer findById(Long id) {
+		return customerRepository.findById(id).get();
+	}
 
 	public void create(CustomerRequest customerRequest) {
 	    Customer customer = new Customer();

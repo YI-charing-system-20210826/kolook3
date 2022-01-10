@@ -31,6 +31,7 @@
 					<td th:text="*{tel_no}"></td>
 					<td><a th:href="@{/customer/{id}(id=*{customer_id})}"
 						class="btn btn-secondary">詳細</a></td>
+					<td><a th:href="@{/customer/{id}/delete(id=*{customer_id})}" class="btn btn-secondary">削除</a></td>
 				</tr>
 			</tbody>
 		</table>
