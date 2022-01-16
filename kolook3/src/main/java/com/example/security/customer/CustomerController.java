@@ -36,6 +36,7 @@ public class CustomerController {
 		return "add";
 	}
 
+	//新規登録
 	@RequestMapping(value ="/customer/create", method = RequestMethod.POST)
 	public String create(@Validated @ModelAttribute CustomerRequest customerRequest, BindingResult result,
 			Model model) {
@@ -58,11 +59,44 @@ public class CustomerController {
 		return "list";
 	}
 
-	@GetMapping("/customer/{id}")
+	//詳細画面
+	@GetMapping("/customer/{id}/detail")
 	public String displayDetail(@PathVariable Long id, Model model) {
+		Customer customer = customerService.findById(id);
+		model.addAttribute("customerData",customer);
 		return "detail";
 	}
+	
+	//編集画面
+	@GetMapping("/customer/{id}/detail/edit")
+	  public String displayEdit(@PathVariable Long id, Model model) {
+	    Customer customer = customerService.findById(id);
+	    CustomerUpdateRequest customerUpdateRequest = new CustomerUpdateRequest();
+		/*CustomerUpdateRequest.setCustomer_id(customer.getCustomer_id());
+		CustomerUpdateRequest.setLast_name(customer.getLast_name());
+		CustomerUpdateRequest.setTel_no(customer.getTel_no());
+		CustomerUpdateRequest.setAddress(customer.getAddress());*/
+	    model.addAttribute("customerUpdateRequest", customerUpdateRequest);
+	    return "customer/edit";
+	  }
+	
+	//編集機能
+	@RequestMapping(value = "/user/update", method = RequestMethod.POST)
+	  public String update(@Validated @ModelAttribute CustomerUpdateRequest customerUpdateRequest, BindingResult result, Model model) {
+	    if (result.hasErrors()) {
+	      List<String> errorList = new ArrayList<String>();
+	      for (ObjectError error : result.getAllErrors()) {
+	        errorList.add(error.getDefaultMessage());
+	      }
+	      model.addAttribute("validationError", errorList);
+	      return "customer/edit";
+	    }
+	    // ユーザー情報の更新
+	    customerService.update(customerUpdateRequest);
+	    return String.format("redirect:/customer/%d", customerUpdateRequest.getId());
+	  }
 
+	//削除
 	@GetMapping("/customer/{id}/delete")
 	public String delete(@PathVariable Long id, Model model) {
 		customerService.delete(id);
