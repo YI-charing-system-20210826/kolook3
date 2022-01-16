@@ -16,10 +16,15 @@ public class CustomerService {
 	public List<Customer> searchAll() {
 		return customerRepository.findAll();
 	}
-	
+
 	public void delete(Long id) {
 	    Customer customer = findById(id);
 	    customerRepository.delete(customer);
+	  }
+
+	public void detail(Long id) {
+	    Customer customer = findById(id);
+	    customerRepository.detail(customer);
 	  }
 
 	private Customer findById(Long id) {
