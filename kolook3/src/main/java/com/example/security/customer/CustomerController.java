@@ -68,7 +68,7 @@ public class CustomerController {
 	}
 	
 	//編集画面
-	@GetMapping("/customer/{id}/detail/edit")
+	@GetMapping("/customer/{id}/edit")
 	  public String displayEdit(@PathVariable Long id, Model model) {
 	    Customer customer = customerService.findById(id);
 	    CustomerUpdateRequest customerUpdateRequest = new CustomerUpdateRequest();
