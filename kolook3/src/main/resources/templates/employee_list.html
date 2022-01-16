@@ -25,8 +25,8 @@
 			<tbody>
 				<tr th:each="employee : ${employeelist}" th:object="${employeelist}"
 					class="align-middle">
-					<td th:text="*{customer_id}"></td>
-					<td th:text="*{first_name}&&*{last_name}"></td>
+					<td th:text="*{member_id}"></td>
+					<!-- <td th:text="*{first_name}&&*{last_name}"></td> -->
 					<!-- <td th:text="*{tel_no}"></td>
 					<td><a th:href="@{/customer/{id}(id=*{id})}"
 						class="btn btn-secondary">詳細</a></td> -->

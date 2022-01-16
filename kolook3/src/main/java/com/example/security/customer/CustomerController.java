@@ -48,18 +48,25 @@ public class CustomerController {
 			return "add";
 		}
 		customerService.create(customerRequest);
-		return "redirect:/";
+		return "redirect:/customer/list";
+	}
+
+	@GetMapping("/customer/list")
+	public String customer(Model model) {
+		List<Customer> customerlist = customerService.searchAll();
+		model.addAttribute("customerlist", customerlist);
+		return "list";
 	}
 
 	@GetMapping("/customer/{id}")
 	public String displayDetail(@PathVariable Long id, Model model) {
 		return "detail";
 	}
-	
+
 	@GetMapping("/customer/{id}/delete")
 	public String delete(@PathVariable Long id, Model model) {
 		customerService.delete(id);
-		return "redirect:/";
+		return "redirect:customer/list";
 	}
 
 }

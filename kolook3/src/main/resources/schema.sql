@@ -42,5 +42,5 @@ member_img VARCHAR(256),
 created_at date,
 updated_at date,
 last_login date
-,PRIMARY KEY (member_id)
+,CONSTRAINT def PRIMARY KEY (member_id)
 );
