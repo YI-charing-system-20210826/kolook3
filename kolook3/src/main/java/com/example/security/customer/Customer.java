@@ -27,7 +27,6 @@ public class Customer implements Serializable {
  private Long customer_id;
 
  @Column(name = "last_name")
-
  private String last_name;
 
  @Column(name = "first_name")
@@ -61,7 +60,6 @@ public class Customer implements Serializable {
  private String ken_code;
 
  @Column(name = "address")
- @NotNull
  private String address;
 
  @Column(name = "address_detail")

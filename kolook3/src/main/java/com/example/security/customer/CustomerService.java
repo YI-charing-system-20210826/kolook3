@@ -22,7 +22,7 @@ public class CustomerService {
 		customerRepository.delete(customer);
 	}
 
-	Customer findById(Long id) {
+	public Customer findById(Long id) {
 		return customerRepository.findById(id).get();
 	}
 

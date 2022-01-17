@@ -72,25 +72,25 @@ public class CustomerController {
 	  public String displayEdit(@PathVariable Long id, Model model) {
 	    Customer customer = customerService.findById(id);
 	    CustomerUpdateRequest customerUpdateRequest = new CustomerUpdateRequest();
-		/*CustomerUpdateRequest.setCustomer_id(customer.getCustomer_id());
+		CustomerUpdateRequest.setCustomer_id(customer.getCustomer_id());
 		CustomerUpdateRequest.setLast_name(customer.getLast_name());
 		CustomerUpdateRequest.setTel_no(customer.getTel_no());
-		CustomerUpdateRequest.setAddress(customer.getAddress());*/
+		CustomerUpdateRequest.setAddress(customer.getAddress());
 	    model.addAttribute("customerUpdateRequest", customerUpdateRequest);
-	    return "customer/edit";
+	    return "edit";
 	  }
 	
 	//編集機能
-	@RequestMapping(value = "/user/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/customer/update", method = RequestMethod.POST)
 	  public String update(@Validated @ModelAttribute CustomerUpdateRequest customerUpdateRequest, BindingResult result, Model model) {
-	    if (result.hasErrors()) {
-	      List<String> errorList = new ArrayList<String>();
-	      for (ObjectError error : result.getAllErrors()) {
-	        errorList.add(error.getDefaultMessage());
-	      }
-	      model.addAttribute("validationError", errorList);
-	      return "customer/edit";
-	    }
+			if (result.hasErrors()) {
+			  List<String> errorList = new ArrayList<String>();
+			  for (ObjectError error : result.getAllErrors()) {
+			    errorList.add(error.getDefaultMessage());
+			  }
+			  model.addAttribute("validationError", errorList);
+			  return "edit";
+			}
 	    // ユーザー情報の更新
 	    customerService.update(customerUpdateRequest);
 	    return String.format("redirect:/customer/%d", customerUpdateRequest.getId());
