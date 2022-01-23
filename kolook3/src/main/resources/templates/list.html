@@ -62,6 +62,7 @@ tbody tr td:first-child::before{
 	<div class="container">
 		<h1 style= "border-bottom:3px dotted #000;">顧客一覧</h1>
 		<div class="float-end">
+			<a href="/top" class="btn btn-secondary">マイページ</a>
 			<a th:href="@{/customer/add}" class="btn btn-primary">新規登録はこちら</a>
 		</div>
 		<table class="table table-striped">
@@ -84,7 +85,7 @@ tbody tr td:first-child::before{
 					<td th:text="*{tel_no}"></td>
 					<td><a th:href="@{/customer/{id}/detail(id=*{customer_id})}"
 						class="btn btn-secondary">詳細</a></td>
-					<td><a th:href="@{/customer/{id}/delete(id=*{customer_id})}" class="btn btn-secondary">削除</a></td>
+					<!-- <td><a th:href="@{/customer/{id}/delete(id=*{customer_id})}" class="btn btn-secondary">削除</a></td> -->
 				</tr>
 			</tbody>
 		</table>
