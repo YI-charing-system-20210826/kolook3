@@ -10,6 +10,32 @@
 	    <h1 style= "border-bottom:3px dotted #000;">従業員新規登録</h1>
 	    <form action="@{/employee/create}" th:object="${employeeRequest}" th:method="post">
 	      <div style="padding-top: 15px; padding-bottom: 15px;">
+	      <label>雇用形態：</label>
+	        <select name="emp_status">
+				<option value="" selected></option>
+				<option value="派遣">派遣</option>
+				<option value="正社員">正社員</option>
+			</select>
+	      </div>
+	      <div style="padding-bottom: 15px;">
+			<label>部署：</label>
+	        <select name="section">
+				<option value="" selected></option>
+				<option value="人事部">人事部</option>
+				<option value="経理部">経理部</option>
+				<option value="営業部">営業部</option>
+			</select>
+	      </div>
+	      <div style="padding-bottom: 15px;">
+			<label>役職：</label>
+	        <select name="position">
+				<option value="" selected></option>
+				<option value="部長">部長</option>
+				<option value="課長">課長</option>
+				<option value="係長">係長</option>
+			</select>
+	      </div>
+	      <div style="padding-bottom: 15px; padding-bottom: 15px;">
 	        <label>性：</label>
 	        <input th:type="text" name="*{last_name}">
 	        <label>名：</label>
@@ -27,7 +53,7 @@
 	      </div>
 	      <div style="padding-bottom: 15px;" >
 	        <label>メールアドレス：</label>
-	        <input th:type="text" name="*{mailAddress}" style="width: 300px;">
+	        <input th:type="text" name="*{email}" style="width: 300px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>郵便番号：</label>
@@ -103,8 +129,19 @@
 	        <input th:type="radio" name="*{gender}" value="男">男性
 	        <input th:type="radio" name="*{gender}" value="女">女性
 	      </div>
+	      <div style="padding-bottom: 15px;">
+	        <label>入社日：</label>
+	        <input th:type="text" name="*{created_at}">
+	      </div>
+	      <div style="padding-bottom: 15px;">
+	      <label>管理者権限：</label>
+	        <select name="role">
+				<option value="1" selected>一般</option>
+				<option value="2">管理者</option>
+			</select>
+	      </div>
 	      <br />
-	      <div>
+	      <div class="text-center">
 	        <a href="/employee_list" class="btn btn-secondary">キャンセル</a>
 	        <input type="submit" value="　登録　" class="btn btn-primary">
 	      </div>
