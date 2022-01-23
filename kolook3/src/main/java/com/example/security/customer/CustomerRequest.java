@@ -54,6 +54,9 @@ public class CustomerRequest implements Serializable {
 	 private int contract_flg;
 
 
+
+
+
 //		public int getCusotmer_id() {
 //		  return 0;
 //		 }

@@ -16,13 +16,13 @@ public class CustomerService {
 	public List<Customer> searchAll() {
 		return customerRepository.findAll();
 	}
-	
+
 	public void delete(Long id) {
 	    Customer customer = findById(id);
 	    customerRepository.delete(customer);
 	  }
 
-	private Customer findById(Long id) {
+	Customer findById(Long id) {
 		return customerRepository.findById(id).get();
 	}
 
@@ -45,4 +45,16 @@ public class CustomerService {
 	    customer.setContract_flg(customerRequest.getContract_flg());
 	    customerRepository.save(customer);
 	}
+	/**
+	   * ユーザー情報 更新
+	   * @param user ユーザー情報
+	   */
+	  public void update(CustomerUpdateRequest customerUpdateRequest) {
+		Customer customer = findById(customerUpdateRequest.getId());
+		customer.setAddress(customerUpdateRequest.getAddress());
+//		customer.setName(customerUpdateRequest.getName());
+//		customer.setPhone(customerUpdateRequest.getPhone());
+//		customer.setUpdateDate(new Date());
+		customerRepository.save(customer);
+	  }
 }

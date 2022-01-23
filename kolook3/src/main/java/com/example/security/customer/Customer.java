@@ -73,6 +73,22 @@ public class Customer implements Serializable {
  @Column(name = "contract_flg")
  private int contract_flg;
 
+ /**
+  * 更新日時
+  */
+ @Column(name = "update_date")
+ private Date updateDate;
+ /**
+  * 登録日時
+  */
+ @Column(name = "create_date")
+ private Date createDate;
+ /**
+  * 削除日時
+  */
+ @Column(name = "delete_date")
+ private Date deleteDate;
+
 // // JPA requirement
 // protected Customer() {
 // }

@@ -58,9 +58,20 @@ public class CustomerController {
 		return "list";
 	}
 
+	/**
+	   * ユーザー情報詳細画面を表示
+	   * @param id 表示するユーザーID
+	   * @param model Model
+	   * @return ユーザー情報詳細画面
+	   */
 	@GetMapping("/customer/{id}")
-	public String displayDetail(@PathVariable Long id, Model model) {
-		return "detail";
+	 public String displayView(@PathVariable Long id, Model model) {
+		Customer customer = customerService.findById(id);
+	    model.addAttribute("detail", customer);
+	    return "detail";
+//	  }
+//	public String displayDetail(@PathVariable Long id, Model model) {
+//		return "detail";
 	}
 
 	@GetMapping("/customer/{id}/delete")
@@ -68,5 +79,44 @@ public class CustomerController {
 		customerService.delete(id);
 		return "redirect:customer/list";
 	}
+	 /**
+	   * ユーザー編集画面を表示
+	   * @param id 表示するユーザーID
+	   * @param model Model
+	   * @return ユーザー編集画面
+	   */
+	  @GetMapping("/customer/{id}/detail")
+	  public String displayEdit(@PathVariable Long id, Model model) {
+	    Customer customer = customerService.findById(id);
+	    CustomerUpdateRequest customerUpdateRequest = new CustomerUpdateRequest();
+	    customerUpdateRequest.setId(customer.getCustomer_id());
+	    customerUpdateRequest.setFirst_name(customer.getFirst_name());
+	    customerUpdateRequest.setLast_name(customer.getLast_name());
+//	    customerUpdateRequest.setPhone(customer.getPhone());
+	    customerUpdateRequest.setAddress(customer.getAddress());
+	    model.addAttribute("customerUpdateRequest", customerUpdateRequest);
+	    return "customer/detail";
+	  }
+	  /**
+	   * ユーザー更新
+	   * @param customerRequest リクエストデータ
+	   * @param model Model
+	   * @return ユーザー情報詳細画面
+	   */
+	  @RequestMapping(value = "/customer/update", method = RequestMethod.POST)
+	  public String update(@Validated @ModelAttribute CustomerUpdateRequest customerUpdateRequest, BindingResult result, Model model) {
+	    if (result.hasErrors()) {
+	      List<String> errorList = new ArrayList<String>();
+	      for (ObjectError error : result.getAllErrors()) {
+	        errorList.add(error.getDefaultMessage());
+	      }
+	      model.addAttribute("validationError", errorList);
+	      return "customer/detail";
+	    }
+	    // ユーザー情報の更新
+	    customerService.update(customerUpdateRequest);
+	    return String.format("redirect:/customer/%d", customerUpdateRequest.getCustomer_id());
+	  }
+
 
 }
