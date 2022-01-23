@@ -100,7 +100,7 @@ public class CustomerController {
 	@GetMapping("/customer/{id}/delete")
 	public String delete(@PathVariable Long id, Model model) {
 		customerService.delete(id);
-		return "redirect:/";
+		return "redirect:/customer/list";
 	}
 
 }
