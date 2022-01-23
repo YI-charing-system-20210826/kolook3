@@ -7,6 +7,9 @@
 </head>
 <body>
 	<div class="container">
+		<div th:if="${validationError}" th:each="error : ${validationError}">
+			<label class="text-danger" th:text="${error}"></label>
+		</div>
 	    <h1 style= "border-bottom:3px dotted #000;">従業員新規登録</h1>
 	    <form action="@{/employee/create}" th:object="${employeeRequest}" th:method="post">
 	      <div style="padding-top: 15px; padding-bottom: 15px;">
