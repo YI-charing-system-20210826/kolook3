@@ -9,12 +9,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(callSuper=false)
-public class CustomerUpdateRequest extends CustomerRequest implements Serializable{
-	
+@EqualsAndHashCode(callSuper = false)
+public class CustomerUpdateRequest extends CustomerRequest implements Serializable {
+
 	@NotNull
 	private Long id;
-	
+
 	public static Long customer_id;
 
 	public static String last_name;
@@ -47,24 +47,22 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 
 	public static void setLast_name(String last_name) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
 
 	public static void setCustomer_id(Long customer_id) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
 
 	public static void setTel_no(int tel_no) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
 
 	public static void setAddress(String address) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
-	
-	
-	
+
 }
