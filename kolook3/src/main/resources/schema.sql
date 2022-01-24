@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS customer(
-customer_id SERIAL NOT NULL ,
+id SERIAL NOT NULL ,
 last_name VARCHAR(128) NULL,
 first_name VARCHAR(128) NULL,
 last_name_Kana VARCHAR(128) NULL,
@@ -14,7 +14,7 @@ address VARCHAR(128) NULL,
 address_detail VARCHAR(128) NULL,
 remarks VARCHAR(300),
 contract_flg int
-,CONSTRAINT abc PRIMARY KEY (customer_id)
+,CONSTRAINT abc PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS employee(

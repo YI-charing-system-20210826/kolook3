@@ -5,12 +5,10 @@ import java.sql.Date;
 
 import lombok.Data;
 
-@Data
+ @Data
 public class CustomerRequest implements Serializable {
 
-	public static Long customer_id;
-
-	public static String last_name;
+	private  String last_name;
 
 	private String first_name;
 
@@ -22,7 +20,7 @@ public class CustomerRequest implements Serializable {
 
 	private Date birthday;
 
-	public static int tel_no;
+	private int tel_no;
 
 	private String email;
 
@@ -30,7 +28,7 @@ public class CustomerRequest implements Serializable {
 
 	private String ken_code;
 
-	public static String address;
+	public  String address;
 
 	private String address_detail;
 
@@ -41,9 +39,9 @@ public class CustomerRequest implements Serializable {
 	//		public int getCusotmer_id() {
 	//		  return 0;
 	//		 }
-	public String getLast_name() {
-		return last_name;
-	}
+//	public String getLast_name() {
+//		return last_name;
+//	}
 
 	//		 public String getFirst_name() {
 	//		  return null;
@@ -60,9 +58,9 @@ public class CustomerRequest implements Serializable {
 	//		 public Date getBirthday() {
 	//		  return null;
 	//		 }
-	public int getTel_no() {
-		return tel_no;
-	}
+//	public int getTel_no() {
+//		return tel_no;
+//	}
 
 	//		 public String getEmail() {
 	//		  return null;
@@ -73,14 +71,14 @@ public class CustomerRequest implements Serializable {
 	//		 public String getKen_code() {
 	//		  return null;
 	//		 }
-	public String getAddress() {
-		return address;
-	}
-
-	public Long getCustomer_id() {
-		// TODO 自動生成されたメソッド・スタブ
-		return customer_id;
-	}
+//	public String getAddress() {
+//		return address;
+//	}
+//
+//	public Long getId() {
+//		// TODO 自動生成されたメソッド・スタブ
+//		return id;
+//	}
 	//		 public String getAddress_detail() {
 	//		  return null;
 	//		 }

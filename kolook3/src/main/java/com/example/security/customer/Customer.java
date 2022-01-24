@@ -12,8 +12,6 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.sun.istack.NotNull;
-
 import lombok.Data;
 
 @Entity
@@ -22,9 +20,9 @@ import lombok.Data;
 public class Customer implements Serializable {
 
  @Id
- @Column(name = "customer_id")
+ @Column(name = "id")
  @GeneratedValue(strategy = GenerationType.IDENTITY)
- private Long customer_id;
+ private Long id;
 
  @Column(name = "last_name")
  private String last_name;
@@ -39,7 +37,6 @@ public class Customer implements Serializable {
  private String first_name_Kana;
 
  @Column(name = "gender")
- @NotNull
  private String gender;
 
  @Column(name = "birthday")
@@ -56,7 +53,6 @@ public class Customer implements Serializable {
  private int post_no;
 
  @Column(name = "ken_code")
- @NotNull
  private String ken_code;
 
  @Column(name = "address")

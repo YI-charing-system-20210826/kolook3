@@ -12,9 +12,19 @@ public class CustomerService {
 
 	@Autowired
 	private CustomerRepository customerRepository;
-
+	 /**
+	   * ユーザー情報 全検索
+	   * @return 検索結果
+	   */
 	public List<Customer> searchAll() {
 		return customerRepository.findAll();
+	}
+	/**
+	   * ユーザー情報 主キー検索
+	   * @return 検索結果
+	   */
+	public Customer findById(Long id) {
+		return customerRepository.findById(id).get();
 	}
 
 	public void delete(Long id) {
@@ -22,13 +32,8 @@ public class CustomerService {
 		customerRepository.delete(customer);
 	}
 
-	public Customer findById(Long id) {
-		return customerRepository.findById(id).get();
-	}
-
 	public void create(CustomerRequest customerRequest) {
 		Customer customer = new Customer();
-		customer.setCustomer_id(customerRequest.getCustomer_id());
 		customer.setLast_name(customerRequest.getLast_name());
 		customer.setFirst_name(customerRequest.getFirst_name());
 		customer.setLast_name_Kana(customerRequest.getLast_name_Kana());
