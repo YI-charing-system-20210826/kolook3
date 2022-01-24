@@ -19,7 +19,6 @@
 		<h1>顧客編集</h1>
 		<form th:action="@{/customer/update}" th:object="${customerUpdateRequest}"
 			th:method="post">
-			<input type="hidden" th:field="*{id}" />
 			<div>
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
