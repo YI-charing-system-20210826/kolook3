@@ -80,12 +80,10 @@ tbody tr td:first-child::before{
 					class="align-middle">
 					<td> </td>
 					<td th:text="*{customer_id}"></td>
-					<td th:text="*{first_name}"></td>
-					<!-- <td th:text="*{first_name}&&*{last_name}"></td> -->
+					<td th:text="*{last_name}"></td>
 					<td th:text="*{tel_no}"></td>
 					<td><a th:href="@{/customer/{id}/detail(id=*{customer_id})}"
 						class="btn btn-secondary">詳細</a></td>
-					<!-- <td><a th:href="@{/customer/{id}/delete(id=*{customer_id})}" class="btn btn-secondary">削除</a></td> -->
 				</tr>
 			</tbody>
 		</table>

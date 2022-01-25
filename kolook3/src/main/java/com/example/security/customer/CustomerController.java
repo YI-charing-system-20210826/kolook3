@@ -72,17 +72,17 @@ public class CustomerController {
 	  public String displayEdit(@PathVariable Long id, Model model) {
 	    Customer customer = customerService.findById(id);
 	    CustomerUpdateRequest customerUpdateRequest = new CustomerUpdateRequest();
-		CustomerUpdateRequest.setCustomer_id(customer.getCustomer_id());
-		CustomerUpdateRequest.setLast_name(customer.getLast_name());
-		CustomerUpdateRequest.setTel_no(customer.getTel_no());
-		CustomerUpdateRequest.setAddress(customer.getAddress());
+	    customerUpdateRequest.setCustomer_id(customer.getCustomer_id());
+		customerUpdateRequest.setLast_name(customer.getLast_name());
+		customerUpdateRequest.setTel_no(customer.getTel_no());
+		customerUpdateRequest.setAddress(customer.getAddress());
 	    model.addAttribute("customerUpdateRequest", customerUpdateRequest);
 	    return "edit";
 	  }
 	
 	//編集機能
 	@RequestMapping(value = "/customer/update", method = RequestMethod.POST)
-	  public String update(@Validated @ModelAttribute CustomerUpdateRequest customerUpdateRequest, BindingResult result, Model model) {
+	  public String update(@ModelAttribute CustomerUpdateRequest customerUpdateRequest, BindingResult result, Model model) {
 			if (result.hasErrors()) {
 			  List<String> errorList = new ArrayList<String>();
 			  for (ObjectError error : result.getAllErrors()) {
@@ -93,7 +93,7 @@ public class CustomerController {
 			}
 	    // ユーザー情報の更新
 	    customerService.update(customerUpdateRequest);
-	    return String.format("redirect:/customer/%d", customerUpdateRequest.getId());
+	    return "redirect:/customer/list";
 	  }
 
 	//削除

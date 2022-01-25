@@ -47,7 +47,7 @@ public class CustomerService {
 	}
 
 	public void update(CustomerUpdateRequest customerUpdateRequest) {
-		Customer customer = findById(customerUpdateRequest.getId());
+		Customer customer = findById(customerUpdateRequest.getCustomer_id());
 		customer.setAddress(customerUpdateRequest.getAddress());
 		customer.setLast_name(customerUpdateRequest.getLast_name());
 		customer.setTel_no(customerUpdateRequest.getTel_no());

@@ -39,9 +39,9 @@ public class CustomerForm {
 
 	public String gender;
 
-	private String remarks;
+	public String remarks;
 
-	private int contract_flg;
+	public int contract_flg;
 
 	public String getLast_name() {
 		return last_name;
@@ -134,7 +134,7 @@ public class CustomerForm {
 	public Date getBirthday() {
 		return birthday;
 	}
-
+	
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}

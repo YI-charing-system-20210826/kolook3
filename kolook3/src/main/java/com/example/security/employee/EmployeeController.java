@@ -73,17 +73,17 @@ public class EmployeeController {
 		  public String displayEdit(@PathVariable Long id, Model model) {
 		    Employee employee = employeeService.findById(id);
 		    EmployeeUpdateRequest employeeUpdateRequest = new EmployeeUpdateRequest();
-		    EmployeeUpdateRequest.setMember_id(employee.getMember_id());
-		    EmployeeUpdateRequest.setLast_name(employee.getLast_name());
-		    EmployeeUpdateRequest.setTel_no(employee.getTel_no());
-		    EmployeeUpdateRequest.setAddress(employee.getAddress());
+		    employeeUpdateRequest.setMember_id(employee.getMember_id());
+		    employeeUpdateRequest.setLast_name(employee.getLast_name());
+		    employeeUpdateRequest.setTel_no(employee.getTel_no());
+		    employeeUpdateRequest.setAddress(employee.getAddress());
 		    model.addAttribute("employeeUpdateRequest", employeeUpdateRequest);
 		    return "employee_edit";
 		  }
 		
 		//編集機能
 		@RequestMapping(value = "/employee/update", method = RequestMethod.POST)
-		  public String update(@Validated @ModelAttribute EmployeeUpdateRequest employeeUpdateRequest, BindingResult result, Model model) {
+		  public String update(@ModelAttribute EmployeeUpdateRequest employeeUpdateRequest, BindingResult result, Model model) {
 				if (result.hasErrors()) {
 				  List<String> errorList = new ArrayList<String>();
 				  for (ObjectError error : result.getAllErrors()) {
@@ -94,7 +94,7 @@ public class EmployeeController {
 				}
 		    // ユーザー情報の更新
 		    employeeService.update(employeeUpdateRequest);
-		    return String.format("redirect:/employee/%d", employeeUpdateRequest.getId());
+		    return "redirect:/employee_list";
 		  }
 
 		//削除

@@ -56,7 +56,7 @@ public class EmployeeService {
 	}
 	
 	public void update(EmployeeUpdateRequest employeeUpdateRequest) {
-		Employee employee = findById(employeeUpdateRequest.getId());
+		Employee employee = findById(employeeUpdateRequest.getMember_id());
 		employee.setAddress(employeeUpdateRequest.getAddress());
 		employee.setLast_name(employeeUpdateRequest.getLast_name());
 		employee.setTel_no(employeeUpdateRequest.getTel_no());
