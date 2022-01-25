@@ -47,7 +47,7 @@ public class Customer implements Serializable {
 	private Date birthday;
 
 	@Column(name = "tel_no")
-	private int tel_no;
+	private String tel_no;
 
 	@Column(name = "email")
 	private String email;
@@ -71,5 +71,5 @@ public class Customer implements Serializable {
 	@Column(name = "contract_flg")
 	private int contract_flg;
 
-	
+
 }

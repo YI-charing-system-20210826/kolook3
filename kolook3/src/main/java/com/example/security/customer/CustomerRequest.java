@@ -16,35 +16,35 @@ public class CustomerRequest implements Serializable {
 
 	@NotEmpty(message = "名前を入力してください")
 	@Size(max = 100, message = "名前は100桁以内で入力してください")
-	public static String last_name;
+	public String last_name;
 
-	public static String first_name;
+	public String first_name;
 
-	public static String last_name_Kana;
+	public String last_name_Kana;
 
-	public static String first_name_Kana;
+	public String first_name_Kana;
 
-	public static String gender;
+	public String gender;
 
-	public static Date birthday;
+	public Date birthday;
 
 	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
-	public static int tel_no;
+	public String tel_no;
 
-	public static String email;
+	public String email;
 
-	public static int post_no;
+	public int post_no;
 
-	public static String ken_code;
+	public String ken_code;
 
 	@Size(max = 255, message = "住所は255桁以内で入力してください")
-	public static String address;
+	public String address;
 
-	public static String address_detail;
+	public String address_detail;
 
-	public static String remarks;
+	public String remarks;
 
-	public static int contract_flg;
+	public  int contract_flg;
 
 	public Long getCusotmer_id() {
 		return customer_id;
@@ -74,7 +74,7 @@ public class CustomerRequest implements Serializable {
 		return birthday;
 	}
 
-	public int getTel_no() {
+	public String getTel_no() {
 		return tel_no;
 	}
 

@@ -31,7 +31,7 @@ public class EmployeeUpdateRequest extends EmployeeRequest implements Serializab
 
  public static String position;
 
- public static int tel_no;
+ public static String tel_no;
 
  public static String email;
 
@@ -108,12 +108,12 @@ public class EmployeeUpdateRequest extends EmployeeRequest implements Serializab
   this.member_id = member_id;
  }
 
- public int getTel_no() {
+ public String getTel_no() {
   return tel_no;
  }
 
  @SuppressWarnings("static-access")
- public void setTel_no(int tel_no) {
+ public void setTel_no(String tel_no) {
   this.tel_no = tel_no;
  }
 

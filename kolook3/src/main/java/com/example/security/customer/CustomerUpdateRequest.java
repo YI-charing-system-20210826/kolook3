@@ -29,7 +29,7 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 
 	public static Date birthday;
 
-	public static int tel_no;
+	public static String tel_no;
 
 	public static String email;
 
@@ -90,12 +90,12 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 		this.customer_id = customer_id;
 	}
 
-	public int getTel_no() {
+	public String getTel_no() {
 		return tel_no;
 	}
 
 	@SuppressWarnings("static-access")
-	public void setTel_no(int tel_no) {
+	public void setTel_no(String tel_no) {
 		this.tel_no = tel_no;
 	}
 
@@ -147,7 +147,7 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 	public Date getBirthday() {
 		return birthday;
 	}
-	
+
 	@SuppressWarnings("static-access")
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
