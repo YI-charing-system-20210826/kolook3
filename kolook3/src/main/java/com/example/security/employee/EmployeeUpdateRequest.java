@@ -31,7 +31,7 @@ public class EmployeeUpdateRequest extends EmployeeRequest implements Serializab
 
  private String position;
 
- public static int tel_no;
+ public static String tel_no;
 
  private String email;
 
@@ -81,11 +81,21 @@ public class EmployeeUpdateRequest extends EmployeeRequest implements Serializab
  public static void setAddress(String address) {
   // TODO 自動生成されたメソッド・スタブ
 
+<<<<<<< Updated upstream
  }
 
  /*public Long getId() {
   // TODO 自動生成されたメソッド・スタブ
   return null;
+=======
+ public String getTel_no() {
+  return tel_no;
+ }
+
+ @SuppressWarnings("static-access")
+ public void setTel_no(String tel_no) {
+  this.tel_no = tel_no;
+>>>>>>> Stashed changes
  }
  */
 }

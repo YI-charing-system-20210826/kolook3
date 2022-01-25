@@ -46,7 +46,7 @@ public class Employee implements Serializable {
 	private String position;
 
 	@Column(name = "tel_no")
-	private int tel_no;
+	private String tel_no;
 
 	@Column(name = "email")
 	private String email;
@@ -97,6 +97,7 @@ public class Employee implements Serializable {
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date last_login;
 
+<<<<<<< Updated upstream
 	/*public void setMember_id(Long long1) {
 		// TODO 自動生成されたメソッド・スタブ
 		
@@ -464,4 +465,7 @@ public class Employee implements Serializable {
 	public Date getLast_login() {
 		return last_login;
 	}*/
+=======
+
+>>>>>>> Stashed changes
 }
