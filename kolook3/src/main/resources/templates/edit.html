@@ -20,14 +20,14 @@
 		<form th:action="@{/customer/update}"
 			th:object="${customerUpdateRequest}" th:method="post">
 			<div>
-				<div class="row mx-md-n5">
+				<!-- <div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						ID<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
 						<input type="text" class="form-control" th:field="*{customer_id}">
 					</div>
-				</div>
+				</div> -->
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						姓<span class="text-danger"></span>
@@ -35,7 +35,7 @@
 					<div class="col py-2 border">
 						<input type="text" class="form-control" th:field="*{last_name}">
 					</div>
-				<!-- </div>
+				</div>
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">名</div>
 					<div class="col py-2 border">
@@ -73,7 +73,7 @@
 					<div class="col py-2 border">
 						<input type="text" class="form-control"  th:field="*{birthday}">
 					</div>
-				</div>  -->
+				</div>
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						電話番号<span class="text-danger"></span>
@@ -82,7 +82,7 @@
 						<input type="text" class="form-control" th:field="*{tel_no}">
 					</div>
 				</div>
-				<!-- <div class="row mx-md-n5">
+				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						アドレス<span class="text-danger"></span>
 					</div>
@@ -105,7 +105,7 @@
 					<div class="col py-2 border">
 						<input type="text" class="form-control"  th:field="*{ken_code}">
 					</div>
-				</div>  -->
+				</div>
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						市区町村<span class="text-danger"></span>
@@ -114,7 +114,7 @@
 						<input type="text" class="form-control" th:field="*{address}">
 					</div>
 				</div>
-				<!-- <div class="row mx-md-n5">
+				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						番地以降<span class="text-danger"></span>
 					</div>
@@ -129,7 +129,7 @@
 					<div class="col py-2 border">
 						<input type="text" class="form-control"  th:field="*{remarks}">
 					</div>
-				</div>  -->
+				</div>
 			</div>
 			<br />
 			<div class="text-center">

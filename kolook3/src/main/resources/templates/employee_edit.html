@@ -20,14 +20,14 @@
 		<form th:action="@{/employee/update}"
 			th:object="${employeeUpdateRequest}" th:method="post">
 			<div>
-				<div class="row mx-md-n5">
+				<!-- <div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						ID<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control" th:field="*{member_id}">
+						<p th:text="*{member_id}"></p>
 					</div>
-				</div>
+				</div> -->
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						姓<span class="text-danger"></span>
@@ -36,10 +36,12 @@
 						<input type="text" class="form-control" th:field="*{last_name}">
 					</div>
 				</div>
-				<!-- <div class="row mx-md-n5">
-					<div class="col-2 pt-3 border bg-light">名</div>
+				<div class="row mx-md-n5">
+					<div class="col-2 pt-3 border bg-light">
+						名<span class="text-danger"></span>
+					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{first_name}">
+						<input type="text" class="form-control"  th:field="*{first_name}">
 					</div>
 				</div>
 				<div class="row mx-md-n5">
@@ -47,7 +49,7 @@
 						セイ<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{last_name_Kana}">
+						<input type="text" class="form-control"  th:field="*{last_name_Kana}">
 					</div>
 				</div>
 				<div class="row mx-md-n5">
@@ -55,7 +57,7 @@
 						メイ<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{first_name_Kana}">
+						<input type="text" class="form-control"  th:field="*{first_name_Kana}">
 					</div>
 				</div>
 				<div class="row mx-md-n5">
@@ -63,7 +65,7 @@
 						性別<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{gender}">
+						<input type="text" class="form-control"  th:field="*{gender}">
 					</div>
 				</div>
 				<div class="row mx-md-n5">
@@ -71,9 +73,9 @@
 						生年月日<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{birthday}">
+						<input type="text" class="form-control"  th:field="*{birthday}">
 					</div>
-				</div> -->
+				</div>
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						電話番号<span class="text-danger"></span>
@@ -82,12 +84,12 @@
 						<input type="text" class="form-control" th:field="*{tel_no}">
 					</div>
 				</div>
-				<!-- <div class="row mx-md-n5">
+				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						アドレス<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{email}">
+						<input type="text" class="form-control"  th:field="*{email}">
 					</div>
 				</div>
 				<div class="row mx-md-n5">
@@ -95,7 +97,7 @@
 						郵便番号<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{post_no}">
+						<input type="text" class="form-control"  th:field="*{post_no}">
 					</div>
 				</div>
 				<div class="row mx-md-n5">
@@ -103,9 +105,9 @@
 						都道府県<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{ken_code}">
+						<input type="text" class="form-control"  th:field="*{ken_code}">
 					</div>
-				</div> -->
+				</div>
 				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						市区町村<span class="text-danger"></span>
@@ -114,22 +116,14 @@
 						<input type="text" class="form-control" th:field="*{address}">
 					</div>
 				</div>
-				<!-- <div class="row mx-md-n5">
+				<div class="row mx-md-n5">
 					<div class="col-2 pt-3 border bg-light">
 						番地以降<span class="text-danger"></span>
 					</div>
 					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{address_detail}">
+						<input type="text" class="form-control"  th:field="*{address_detail}">
 					</div>
 				</div>
-				<div class="row mx-md-n5">
-					<div class="col-2 pt-3 border bg-light">
-						備考欄<span class="text-danger"></span>
-					</div>
-					<div class="col py-2 border">
-						<input type="text" class="form-control"  th:value="*{remarks}">
-					</div>
-				</div> -->
 			</div>
 			<br />
 			<div class="text-center">
