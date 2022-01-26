@@ -17,7 +17,7 @@
 	    <form th:action="@{/employee/create}" th:object="${employeeRequest}" method="post">
 	      <div style="padding-top: 15px; padding-bottom: 15px;">
 	      <label>雇用形態：</label>
-	        <select name="emp_status">
+	        <select th:field="*{emp_status}">
 				<option value="" selected></option>
 				<option value="派遣">派遣</option>
 				<option value="正社員">正社員</option>
@@ -25,7 +25,7 @@
 	      </div>
 	      <div style="padding-bottom: 15px;">
 			<label>部署：</label>
-	        <select name="section">
+	        <select th:field="*{section}">
 				<option value="" selected></option>
 				<option value="人事部">人事部</option>
 				<option value="経理部">経理部</option>
@@ -34,7 +34,7 @@
 	      </div>
 	      <div style="padding-bottom: 15px;">
 			<label>役職：</label>
-	        <select name="position">
+	        <select th:field="*{position}">
 				<option value="" selected></option>
 				<option value="部長">部長</option>
 				<option value="課長">課長</option>
@@ -43,31 +43,31 @@
 	      </div>
 	      <div style="padding-bottom: 15px; padding-bottom: 15px;">
 	        <label>性：</label>
-	        <input th:type="text" name="*{last_name}">
+	        <input th:type="text" th:field="*{last_name}">
 	        <label>名：</label>
-	        <input th:type="text" name="*{first_name}">
+	        <input th:type="text" th:field="*{first_name}">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>セイ：</label>
-	        <input th:type="text" name="*{last_name_Kana}">
+	        <input th:type="text" th:field="*{last_name_Kana}">
 	        <label>メイ：</label>
-	        <input th:type="text" name="*{first_name_Kana}">
+	        <input th:type="text" th:field="*{first_name_Kana}">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>電話番号：</label>
-	        <input th:type="text" name="*{tel_no}" style="width: 120px;">
+	        <input th:type="text" th:field="*{tel_no}" style="width: 120px;">
 	      </div>
 	      <div style="padding-bottom: 15px;" >
 	        <label>メールアドレス：</label>
-	        <input th:type="text" name="*{email}" style="width: 300px;">
+	        <input th:type="text" th:field="*{email}" style="width: 300px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>郵便番号：</label>
-	        <input th:type="text" name="*{post_no}" style="width: 80px;">
+	        <input th:type="text" th:field="*{post_no}" style="width: 80px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>都道府県：</label>
-	        <select name="ken_code">
+	        <select th:field="*{ken_code}">
 				<option value="" selected></option>
 				<option value="北海道">北海道</option>
 				<option value="青森県">青森県</option>
@@ -120,35 +120,35 @@
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>市区町村：</label>
-	        <input th:type="text" name="*{address}">
+	        <input th:type="text" th:field="*{address}">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>番地以降：</label>
-	        <input th:type="text" name="*{address_detail}" style="width: 300px;">
+	        <input th:type="text" th:field="*{address_detail}" style="width: 300px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>生年月日：</label>
-	        <input th:type="text" name="*{birthday}">
+	        <input th:type="text" th:field="*{birthday}">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>性別：</label>
-	        <input th:type="radio" name="*{gender}" value="男">男性
-	        <input th:type="radio" name="*{gender}" value="女">女性
+	        <input th:type="radio" th:field="*{gender}" value="男">男性
+	        <input th:type="radio" th:field="*{gender}" value="女">女性
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	        <label>入社日：</label>
-	        <input th:type="text" name="*{created_at}">
+	        <input th:type="text" th:field="*{created_at}">
 	      </div>
 	      <div style="padding-bottom: 15px;">
 	      <label>管理者権限：</label>
-	        <select name="role">
+	        <select th:field="*{role}">
 				<option value="1" selected>一般</option>
 				<option value="2">管理者</option>
 			</select>
 	      </div>
 	      <br />
 	      <div class="text-center">
-	        <a href="/employee/employee_list" class="btn btn-secondary">キャンセル</a>
+	        <a href="/employee_list" class="btn btn-secondary">キャンセル</a>
 	        <input type="submit" value="　登録　" class="btn btn-primary">
 	      </div>
 	  </form>

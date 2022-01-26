@@ -50,7 +50,7 @@ public class EmployeeController {
 			return "employee_add";
 		}
 		employeeService.create(employeeRequest);
-		return "redirect:/employee/employee_list";
+		return "redirect:/employee_list";
 	}
 
 	@GetMapping("/employee_list")
