@@ -38,7 +38,7 @@ public class EmployeeController {
 	}
 
 	//新規登録
-	@RequestMapping(value ="/employee/employee_create", method = RequestMethod.POST)
+	@RequestMapping(value ="/employee/create", method = RequestMethod.POST)
 	public String create(@Validated @ModelAttribute EmployeeRequest employeeRequest, BindingResult result,
 			Model model) {
 		if (result.hasErrors()) {
@@ -50,16 +50,16 @@ public class EmployeeController {
 			return "employee_add";
 		}
 		employeeService.create(employeeRequest);
-		return "redirect:/";
+		return "redirect:/employee_list";
 	}
-	
+
 	@GetMapping("/employee_list")
 	public String employee(Model model) {
 		List<Employee> employeelist = employeeService.searchAll();
 		model.addAttribute("employeelist", employeelist);
 		return "employee_list";
 	}
-	
+
 	//詳細画面
 		@GetMapping("/employee/{id}/employee_detail")
 		public String displayDetail(@PathVariable Long id, Model model) {
@@ -67,7 +67,7 @@ public class EmployeeController {
 			model.addAttribute("employeeData",employee);
 			return "employee_detail";
 		}
-		
+
 		//編集画面
 		@GetMapping("/employee/{id}/employee_edit")
 		  public String displayEdit(@PathVariable Long id, Model model) {
@@ -80,7 +80,7 @@ public class EmployeeController {
 		    model.addAttribute("employeeUpdateRequest", employeeUpdateRequest);
 		    return "employee_edit";
 		  }
-		
+
 		//編集機能
 		@RequestMapping(value = "/employee/update", method = RequestMethod.POST)
 		  public String update(@ModelAttribute EmployeeUpdateRequest employeeUpdateRequest, BindingResult result, Model model) {
