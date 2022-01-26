@@ -70,6 +70,7 @@ tbody tr td:first-child::before{
 	<div class="container">
 		<h1 style= "border-bottom:3px dotted #000;">従業員一覧</h1>
 		<div class="float-end">
+			<a href="/top" class="btn btn-secondary">マイページ</a>
 			<a th:href="@{/employee/employee_add}" class="btn btn-primary">新規登録はこちら</a>
 		</div>
 		<table class="table MyTable table-striped">
@@ -98,7 +99,7 @@ tbody tr td:first-child::before{
 		<script>
 				$(document).ready(function() {
   					$(".MyTable").paginate({
-  					            rows: 20,          // Set number of rows per page. Default: 5
+  					            rows: 10,          // Set number of rows per page. Default: 5
   					            position: "bottom",   // Set position of pager. Default: "bottom"
   					            jqueryui: false,    // Allows using jQueryUI theme for pager buttons. Default: false
   					            showIfLess: true  // Don't show pager if table has only one page. Default: true

@@ -95,13 +95,12 @@ tbody tr td:first-child::before{
 				</tr>
 			</tbody>
 		</table>
-	
 	</div>
 		<script type="text/javascript" th:src="@{../js/PaginateMyTable.js}"></script>
 		<script>
 				$(document).ready(function() {
   					$(".MyTable").paginate({
-  					            rows: 20,          // Set number of rows per page. Default: 5
+  					            rows: 10,          // Set number of rows per page. Default: 5
   					            position: "bottom",   // Set position of pager. Default: "bottom"
   					            jqueryui: false,    // Allows using jQueryUI theme for pager buttons. Default: false
   					            showIfLess: true  // Don't show pager if table has only one page. Default: true
