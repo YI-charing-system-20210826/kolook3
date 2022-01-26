@@ -2,11 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' id='jquery-js'></script>
+<script src="js/paginathing.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container text-center">
 		<div th:if="${validationError}" th:each="error : ${validationError}">
 			<label class="text-danger" th:text="${error}"></label>
 		</div>
@@ -14,31 +17,31 @@
 		<form th:action="@{/customer/create}" th:object="${customerRequest}"
 			method="post">
 			<div style="padding-top: 15px; padding-bottom: 15px;">
-	        <label>性：</label>
-	        <input th:type="text" th:field="*{last_name}">
-	        <label>名：</label>
-	        <input th:type="text" th:field="*{first_name}">
+	        <label style="width:130px;" class="text-center">姓</label>
+	        <input th:type="text" th:field="*{last_name}" style="width:110px;">
+	        <label style="width:130px;" class="text-center">名</label>
+	        <input th:type="text" th:field="*{first_name}" style="width:110px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>セイ：</label>
-	        <input th:type="text" th:field="*{Last_name_Kana}">
-	        <label>メイ：</label>
-	        <input th:type="text" th:field="*{First_name_Kana}">
+	        <label style="width:130px;" class="text-center">セイ</label>
+	        <input th:type="text" th:field="*{Last_name_Kana}" style="width:110px;">
+	        <label style="width:130px;" class="text-center">メイ</label>
+	        <input th:type="text" th:field="*{First_name_Kana}" style="width:110px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>電話番号：</label>
-	        <input th:type="text" th:field="*{Tel_no}" style="width: 120px;">
+	        <label style="width:130px;" class="text-center">電話番号</label>
+	        <input th:type="text" th:field="*{Tel_no}" style="width: 360px;">
 	      </div>
 	      <div style="padding-bottom: 15px;" >
-	        <label>メールアドレス：</label>
-	        <input th:type="text" th:field="*{Email}" style="width: 300px;">
+	        <label style="width:130px;" class="text-center">メールアドレス</label>
+	        <input th:type="text" th:field="*{Email}" style="width: 360px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>郵便番号：</label>
-	        <input th:type="text" th:field="*{Post_no}" style="width: 80px;">
+	        <label style="width:130px;" class="text-center">郵便番号</label>
+	        <input th:type="text" th:field="*{Post_no}" style="width: 360px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>都道府県：</label>
+	        <label style="width:130px;" class="text-center">都道府県</label>
 	        <select name="Ken_code">
 				<option value="" selected></option>
 				<option value="北海道">北海道</option>
@@ -91,30 +94,30 @@
 			</select>
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>市区町村：</label>
-	        <input th:type="text" th:field="*{Address}">
+	        <label style="width:110px;" class="text-center">市区町村</label>
+	        <input th:type="text" th:field="*{Address}" style="width: 280px;">
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>番地以降：</label>
-	        <input th:type="text" th:field="*{Address_detail}" style="width: 300px;">
+	        <label style="width:110px;" class="text-center">番地以降</label>
+	        <input th:type="text" th:field="*{Address_detail}" style="width: 280px;">
 	      </div>
 	     <!--  <div style="padding-bottom: 15px;">
 	        <label>生年月日：</label>
 	        <input th:type="text" th:field="*{Birthday}">
 	      </div> -->
 	      <div style="padding-bottom: 15px;">
-	        <label>性別：</label>
+	        <label style="width:110px;" class="text-center">性別</label>
 	        <input th:type="radio" th:field="*{Gender}" value="男">男性
 	        <input th:type="radio" th:field="*{Gender}" value="女">女性
 	      </div>
 	      <div style="padding-bottom: 15px;">
-	        <label>備考：</label>
-	        <textarea th:field="*{remarks}" style="width: 400px; height: 50px;">
+	        <label style="width:110px;" class="text-center">備考</label>
+	        <textarea th:field="*{remarks}" style="width: 280px;">
 	        </textarea>
 	      </div>
-	      <input th:type="hidden" th:field="*{contract_flg}" value="0">
+	      <input th:type="hidden" th:field="*{contract_flg}" value="0" style="width: 280px;">
 			<br />
-			<div class="text-center">
+			<div class="text-left">
 				<a href="/customer/list" class="btn btn-secondary">キャンセル</a> <input
 					type="submit" value="　登録　" class="btn btn-primary">
 			</div>
