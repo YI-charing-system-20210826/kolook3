@@ -13,7 +13,7 @@ ken_code VARCHAR(4) NULL,
 address VARCHAR(128) NULL,
 address_detail VARCHAR(128) NULL,
 remarks VARCHAR(300),
-contract_flg int
+contract_flg int NULL
 ,CONSTRAINT abc PRIMARY KEY (customer_id)
 );
 
