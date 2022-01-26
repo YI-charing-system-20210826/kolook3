@@ -77,6 +77,25 @@ public class EmployeeController {
 		    employeeUpdateRequest.setLast_name(employee.getLast_name());
 		    employeeUpdateRequest.setTel_no(employee.getTel_no());
 		    employeeUpdateRequest.setAddress(employee.getAddress());
+		    employeeUpdateRequest.setFirst_name(employee.getFirst_name());
+		    employeeUpdateRequest.setLast_name_Kana(employee.getLast_name_Kana());
+		    employeeUpdateRequest.setFirst_name_Kana(employee.getFirst_name_Kana());
+		    employeeUpdateRequest.setEmp_status(employee.getEmp_status());
+		    employeeUpdateRequest.setSection(employee.getSection());
+		    employeeUpdateRequest.setPosition(employee.getPosition());
+		    employeeUpdateRequest.setEmail(employee.getEmail());
+		    employeeUpdateRequest.setPost_no(employee.getPost_no());
+		    employeeUpdateRequest.setKen_code(employee.getKen_code());
+		    employeeUpdateRequest.setAddress_detail(employee.getAddress_detail());
+		    employeeUpdateRequest.setBirthday(employee.getBirthday());
+		    employeeUpdateRequest.setGender(employee.getGender());
+		    employeeUpdateRequest.setJoin_at(employee.getJoin_at());
+		    employeeUpdateRequest.setLeave_at(employee.getLeave_at());
+		    employeeUpdateRequest.setRole(employee.getRole());
+		    employeeUpdateRequest.setPassword(employee.getPassword());
+		    employeeUpdateRequest.setMember_img(employee.getMember_img());
+		    employeeUpdateRequest.setCreated_at(employee.getCreated_at());
+		    employeeUpdateRequest.setUpdated_at(employee.getUpdated_at());
 		    model.addAttribute("employeeUpdateRequest", employeeUpdateRequest);
 		    return "employee_edit";
 		  }
