@@ -66,20 +66,31 @@ public class CustomerController {
 		model.addAttribute("customerData",customer);
 		return "detail";
 	}
-	
+
 	//編集画面
 	@GetMapping("/customer/{id}/edit")
 	  public String displayEdit(@PathVariable Long id, Model model) {
 	    Customer customer = customerService.findById(id);
 	    CustomerUpdateRequest customerUpdateRequest = new CustomerUpdateRequest();
 	    customerUpdateRequest.setCustomer_id(customer.getCustomer_id());
+	    customerUpdateRequest.setFirst_name(customer.getFirst_name());
 		customerUpdateRequest.setLast_name(customer.getLast_name());
+		customerUpdateRequest.setLast_name_Kana(customer.getLast_name_Kana());
+		customerUpdateRequest.setFirst_name_Kana(customer.getFirst_name_Kana());
+		customerUpdateRequest.setGender(customer.getGender());
+		customerUpdateRequest.setBirthday(customer.getBirthday());
 		customerUpdateRequest.setTel_no(customer.getTel_no());
+		customerUpdateRequest.setEmail(customer.getEmail());
+		customerUpdateRequest.setPost_no(customer.getPost_no());
+		customerUpdateRequest.setKen_code(customer.getKen_code());
 		customerUpdateRequest.setAddress(customer.getAddress());
+		customerUpdateRequest.setAddress_detail(customer.getAddress_detail());
+		customerUpdateRequest.setRemarks(customer.getRemarks());
+		customerUpdateRequest.setContract_flg(customer.getContract_flg());
 	    model.addAttribute("customerUpdateRequest", customerUpdateRequest);
 	    return "edit";
 	  }
-	
+
 	//編集機能
 	@RequestMapping(value = "/customer/update", method = RequestMethod.POST)
 	  public String update(@ModelAttribute CustomerUpdateRequest customerUpdateRequest, BindingResult result, Model model) {
