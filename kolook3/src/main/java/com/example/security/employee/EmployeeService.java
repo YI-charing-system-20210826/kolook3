@@ -17,6 +17,15 @@ public class EmployeeService {
 		return employeeRepository.findAll();
 	}
 
+	public void delete(Long id) {
+		Employee employee = findById(id);
+		employeeRepository.delete(employee);
+	}
+
+	public Employee findById(Long id) {
+		return employeeRepository.findById(id).get();
+	}
+
 	public void create(EmployeeRequest employeeRequest) {
 	    Employee employee = new Employee();
 	    employee.setMember_id(employeeRequest.getMember_id());
@@ -43,8 +52,14 @@ public class EmployeeService {
 	    employee.setCreated_at(employeeRequest.getCreated_at());
 	    employee.setUpdated_at(employeeRequest.getUpdated_at());
 	    employee.setLast_login(employeeRequest.getLast_login());
-	    //employee.setRemarks(employeeRequest.getRemarks());
-	    //employee.setContract_flg(employeeRequest.getContract_flg());
 	    employeeRepository.save(employee);
+	}
+
+	public void update(EmployeeUpdateRequest employeeUpdateRequest) {
+		Employee employee = findById(employeeUpdateRequest.getMember_id());
+		employee.setAddress(employeeUpdateRequest.getAddress());
+		employee.setLast_name(employeeUpdateRequest.getLast_name());
+		employee.setTel_no(employeeUpdateRequest.getTel_no());
+		employeeRepository.save(employee);
 	}
 }

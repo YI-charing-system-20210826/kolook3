@@ -3,46 +3,64 @@
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <meta charset="UTF-8" />
-<title>メニュー画面</title>
+<title>マイページ</title>
 <link rel="stylesheet" type="text/css" href="./static/top.css">
 <style>
 body {
-	background-image:
-		url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
 	background-size: cover;
-	font-size: 30px;
-	font-weight: 200;
 	text-align: center;
+}
+h2 {
+  position: relative;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
+h2:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 110px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 </style>
 </head>
-<body class="body">
-	<h2 style="font-size: 50px;font-weight: 200;font-family: Century;">MyPage</h2>
+<body style="background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));" class="body text-center">
+	<h2 style="font-size: 50px;font-weight: 200;font-family: Century;">KoLook MyPage</h2>
 	<div th:fragment="logout" sec:authorize="isAuthenticated()">
-		<p>
-			管理者名: <span sec:authentication="name"></span>
+		<p style="font-size: 30px;font-weight: 200px;font-family: Century;">
+			<span sec:authentication="name"></span><a>さんお帰りなさい</a>
+		</p>
+		<!-- <p style="font-size: 30px;font-weight: 200px;font-family: Century;">
+			メールアドレス: <span sec:authentication="principal.mailAddress"></span> -->
 		</p>
 		<p>
-			メールアドレス: <span sec:authentication="principal.mailAddress"></span>
-		</p>
-		<p>
-			権限: <span sec:authentication="principal.authorities"></span>
+			<!-- 権限: <span sec:authentication="principal.authorities"></span> -->
 		</p>
 			<table style="margin:auto;">
 					<tr>
 						<td>
 							<form action="#" th:action="@{/logout}" method="post">	
-								<input type="submit" value="ログアウト" />
+								<input type="submit" value="ログアウト" style="width:200px;height:80px"/>
 							</form>
 						</td>
 						<td>
 							<form action="#" th:action="@{/customer/list}" th:cbject="${customerList}" method="post">
-								<input type="submit" value="顧客一覧画面へ" />
+								<input type="submit" value="顧客一覧画面へ" style="width:200px;height:80px"/>
 							</form>
 						</td>	
 						<td>
 							<form action="#" th:action="@{/employee_list}" th:cbject="${employeeList}" method="post">
-								<input type="submit" value="従業員一覧画面へ" />
+								<input type="submit" value="従業員一覧画面へ" style="width:200px;height:80px"/>
 							</form>
 						</td>
 					</tr>

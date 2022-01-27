@@ -3,153 +3,91 @@ package com.example.security.employee;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
+@Data
 public class EmployeeRequest implements Serializable {
 
-	@NotEmpty(message = "名前を入力してください")
-	@Size(max = 100, message = "名前は100桁以内で入力してください")
-	private String name;
-	/**
-	 * 住所
-	 */
-	@Size(max = 255, message = "住所は255桁以内で入力してください")
-	private String address;
-	/**
-	 * 電話番号
-	 */
-	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
-	private String phone;
+	public static Long member_id;
 
-	public int getMember_id() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
+//	@NotEmpty(message = "名前を入力してください")
+//	@Size(max = 100, message = "名前は100桁以内で入力してください")
+	public  String last_name;
+
+	public String first_name;
+
+	public String last_name_Kana;
+
+	public String first_name_Kana;
+
+	public String emp_status;
+
+	public String section;
+
+	public String position;
+
+	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
+	public String tel_no;
+
+	public String email;
+
+	public String post_no;
+
+	public String ken_code;
+
+	@Size(max = 255, message = "住所は255桁以内で入力してください")
+	public String address;
+
+	public String address_detail;
+
+	public String birthday;
+
+	public String gender;
+
+	public int join_at;
+
+	public int leave_at;
+
+	public int role;
+
+	public String password;
+
+	public String member_img;
+
+	public Date created_at;
+
+	public Date updated_at;
+
+	public Date last_login;
+
+	public Long getMember_id() {
+		return member_id;
 	}
 
 	public String getLast_name() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return last_name;
 	}
 
 	public String getFirst_name() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return first_name;
 	}
 
 	public String getLast_name_Kana() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return last_name_Kana;
 	}
 
 	public String getFirst_name_Kana() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return first_name_Kana;
 	}
 
-	public String getEmp_status() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public String getSection() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public String getPosition() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public int getTel_no() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-
-	public String getEmail() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public int getPost_no() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-
-	public String getKen_code() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+	public String getTel_no() {
+		return tel_no;
 	}
 
 	public String getAddress() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return address;
 	}
-
-	public String getAddress_detail() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Date getBirthday() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public String getGender() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public int getJoin_at() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-
-	public int getLeave_at() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-
-	public int getRole() {
-		// TODO 自動生成されたメソッド・スタブ
-		return 0;
-	}
-
-	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public String getMember_img() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Date getCreated_at() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Date getUpdated_at() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public Date getLast_login() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	/*public Object getRemarks() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-	public String getContract_flg() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	*/}
-
+}

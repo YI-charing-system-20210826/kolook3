@@ -8,12 +8,12 @@
 </head>
 <body>
 	<div class="container">
-    <h1>顧客詳細</h1>
-    <div th:object="${customerData}">
+    <h1>従業員詳細</h1>
+    <div th:object="${employeeData}">
     	<div class="row mx-md-n5">
         <div class="col-2 pt-3 border bg-light">ID</div>
         <div class="col pt-3 border">
-          <p th:text="*{customer_id}"></p>
+          <p th:text="*{member_id}"></p>
         </div>
       </div>
       <div class="row mx-md-n5">
@@ -89,17 +89,23 @@
         </div>
       </div>
       <div class="row mx-md-n5">
-        <div class="col-2 pt-3 border bg-light">備考欄</div>
+        <div class="col-2 pt-3 border bg-light">管理権限</div>
         <div class="col pt-3 border">
-          <p th:text="*{remarks}"></p>
+          <p th:text="*{role}"></p>
+        </div>
+      </div>
+      <div class="row mx-md-n5">
+        <div class="col-2 pt-3 border bg-light">パスワード</div>
+        <div class="col pt-3 border">
+          <p th:text="*{password}"></p>
         </div>
       </div>
     </div>
     <br />
     <div class="text-center">
-      <a th:href="@{/customer/{id}/edit(id=*{id})}" class="btn btn-primary">　編集　</a>
-      <a th:href="@{/customer/{id}/delete(id=*{id})}" class="btn btn-secondary">　削除　</a>
-      <a href="/customer/list" class="btn btn-secondary">一覧に戻る</a>
+      <a th:href="@{/employee/{id}/employee_edit(id=*{id})}" class="btn btn-primary">　編集　</a>
+      <a th:href="@{/employee/{id}/employee_delete(id=*{id})}" class="btn btn-secondary">　削除　</a>
+      <a href="/employee_list" class="btn btn-secondary">一覧に戻る</a>
     </div>
   </div>
 </body>
