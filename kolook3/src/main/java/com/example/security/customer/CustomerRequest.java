@@ -1,7 +1,6 @@
 package com.example.security.customer;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -26,14 +25,14 @@ public class CustomerRequest implements Serializable {
 
 	public String gender;
 
-	public Date birthday;
+	public String birthday;
 
 	@Pattern(regexp = "0\\d{1,4}-\\d{1,4}-\\d{4}", message = "電話番号の形式で入力してください")
 	public String tel_no;
 
 	public String email;
 
-	public int post_no;
+	public String post_no;
 
 	public String ken_code;
 
@@ -70,7 +69,7 @@ public class CustomerRequest implements Serializable {
 		return gender;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
@@ -82,7 +81,7 @@ public class CustomerRequest implements Serializable {
 		return email;
 	}
 
-	public int getPost_no() {
+	public String getPost_no() {
 		return post_no;
 	}
 

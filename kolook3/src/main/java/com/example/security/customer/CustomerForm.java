@@ -1,7 +1,5 @@
 package com.example.security.customer;
 
-import java.util.Date;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -27,7 +25,7 @@ public class CustomerForm {
 	@Size(max = 100)
 	public String email;
 
-	public int post_no;
+	public String post_no;
 
 	public String ken_code;
 
@@ -35,7 +33,7 @@ public class CustomerForm {
 
 	public String address_detail;
 
-	public Date birthday;
+	public String birthday;
 
 	public String gender;
 
@@ -99,11 +97,11 @@ public class CustomerForm {
 		this.email = email;
 	}
 
-	public int getPost_no() {
+	public String getPost_no() {
 		return post_no;
 	}
 
-	public void setPost_no(int post_no) {
+	public void setPost_no(String post_no) {
 		this.post_no = post_no;
 	}
 
@@ -131,11 +129,11 @@ public class CustomerForm {
 		this.address_detail = address_detail;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
-	
-	public void setBirthday(Date birthday) {
+
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 

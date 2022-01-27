@@ -15,8 +15,8 @@
   </div>
      <h1 style="border-bottom:3px dotted #000;">従業員新規登録</h1>
      <form th:action="@{/employee/create}" th:object="${employeeRequest}" method="post">
-     
-       <div class="row mx-md-n5">
+
+       <!-- <div class="row mx-md-n5">
         <label class="col-2 pt-3 border bg-light">雇用形態</label>
          <div class="col pt-3 border">
            <select th:field="*{emp_status}" class="form-control col-2 pt-3">
@@ -26,7 +26,7 @@
      </select>
     </div>
        </div>
-       
+
        <div class="row mx-md-n5">
    <label class="col-2 pt-3 border bg-light">部署</label>
     <div class="col pt-3 border">
@@ -38,7 +38,7 @@
      </select>
     </div>
        </div>
-       
+
        <div class="row mx-md-n5">
    <label class="col-2 pt-3 border bg-light">役職</label>
     <div class="col pt-3 border">
@@ -49,57 +49,57 @@
       <option value="係長">係長</option>
      </select>
     </div>
-       </div>
-       
+       </div> -->
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">姓</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{last_name}" class="form-control col-2 pt-3">
           </div>
        </div>
-        
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">名</label>
           <div class="col pt-3 border">
             <input th:type="text" th:field="*{first_name}" class="form-control col-2 pt-3">
          </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">セイ</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{last_name_Kana}" class="form-control col-2 pt-3">
           </div>
         </div>
-          
-        <div class="row mx-md-n5"> 
+
+        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">メイ</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{first_name_Kana}" class="form-control col-2 pt-3">
          </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">電話番号</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{tel_no}" class="form-control col-2 pt-3">
           </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">メールアドレス</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{email}" class="form-control col-2 pt-3">
          </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">郵便番号</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{post_no}" class="form-control col-2 pt-3">
           </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">都道府県</label>
           <div class="col pt-3 border">
@@ -155,28 +155,28 @@
      </select>
     </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">市区町村</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{address}" class="form-control col-2 pt-3">
          </div>
        </div>
-       
+
        <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">番地以降</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{address_detail}" class="form-control col-2 pt-3">
           </div>
       </div>
-      
+
       <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">生年月日</label>
           <div class="col pt-3 border">
            <input th:type="text" th:field="*{birthday}" class="form-control col-2 pt-3">
           </div>
       </div>
-      
+
       <div class="row mx-md-n5">
          <label class="col-2 pt-3 border bg-light">性別</label>
           <div class="form-control col pt-3 border">
@@ -184,7 +184,7 @@
            <input th:type="radio" th:field="*{gender}" value="女" class="col pt-3 border">女性
           </div>
        </div>
-       
+
        <div class="row mx-md-n5">
         <label class="col-2 pt-3 border bg-light">管理者権限</label>
          <div class="col pt-3 border">

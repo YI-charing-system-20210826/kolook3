@@ -16,7 +16,7 @@ public class EmployeeService {
 	public List<Employee> searchAll() {
 		return employeeRepository.findAll();
 	}
-	
+
 	public void delete(Long id) {
 		Employee employee = findById(id);
 		employeeRepository.delete(employee);
@@ -54,7 +54,7 @@ public class EmployeeService {
 	    employee.setLast_login(employeeRequest.getLast_login());
 	    employeeRepository.save(employee);
 	}
-	
+
 	public void update(EmployeeUpdateRequest employeeUpdateRequest) {
 		Employee employee = findById(employeeUpdateRequest.getMember_id());
 		employee.setAddress(employeeUpdateRequest.getAddress());

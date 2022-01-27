@@ -34,7 +34,7 @@ public class EmployeeRequest implements Serializable {
 
 	public String email;
 
-	public int post_no;
+	public String post_no;
 
 	public String ken_code;
 
@@ -43,7 +43,7 @@ public class EmployeeRequest implements Serializable {
 
 	public String address_detail;
 
-	public Date birthday;
+	public String birthday;
 
 	public String gender;
 

@@ -52,7 +52,7 @@ public class Employee implements Serializable {
 	private String email;
 
 	@Column(name = "post_no")
-	private int post_no;
+	private String post_no;
 
 	@Column(name = "ken_code")
 	private String ken_code;
@@ -64,8 +64,8 @@ public class Employee implements Serializable {
 	private String address_detail;
 
 	@Column(name = "birthday")
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
-	private Date birthday;
+
+	private String birthday;
 
 	@Column(name = "gender")
 	private String gender;

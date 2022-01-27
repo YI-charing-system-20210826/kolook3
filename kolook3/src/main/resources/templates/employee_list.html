@@ -18,7 +18,7 @@ div.pager span {
     height: 1.8em;
     line-height: 1.8;
     text-align: center;
-    cursor: pointer;   
+    cursor: pointer;
     margin-right: 0.5em;
 }
 
@@ -67,48 +67,50 @@ tbody tr td:first-child::before{
 </style>
 </head>
 <body style="padding:15px;">
-	<div class="container">
-		<h1 style= "border-bottom:3px dotted #000;">従業員一覧</h1>
-		<div class="float-end">
-			<a href="/top" class="btn btn-secondary">マイページ</a>
-			<a th:href="@{/employee/employee_add}" class="btn btn-primary">新規登録はこちら</a>
-		</div>
-		<table class="table MyTable table-striped">
-			<thead>
-				<tr>
-					<th>NO</th>
-					<th>ID</th>
-					<th>従業員名</th>
-					<th>電話番号</th>
-					<th>詳細</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="employee : ${employeelist}" th:object="${employee}"
-					class="align-middle">
-					<td> </td>
-					<td th:text="*{member_id}"></td>
-					<td th:text="*{last_name}"></td>
-					<td th:text="*{tel_no}"></td>
-					<td><a th:href="@{/employee/{id}/employee_detail(id=*{member_id})}"
-						class="btn btn-secondary">詳細</a></td>
-				</tr>
-			</tbody>
-		</table>
-		<script type="text/javascript" th:src="@{../js/PaginateMyTable.js}"></script>
-		<script>
-				$(document).ready(function() {
-  					$(".MyTable").paginate({
-  					            rows: 10,          // Set number of rows per page. Default: 5
-  					            position: "bottom",   // Set position of pager. Default: "bottom"
-  					            jqueryui: false,    // Allows using jQueryUI theme for pager buttons. Default: false
-  					            showIfLess: true  // Don't show pager if table has only one page. Default: true
-  					        });
-				});
-			</script>
-	</div>
+ <div class="container">
+  <h1 style= "border-bottom:3px dotted #000;">従業員一覧</h1>
+  <div class="float-end">
+   <a href="/top" class="btn btn-secondary">マイページ</a>
+   <a th:href="@{/employee/employee_add}" class="btn btn-primary">新規登録はこちら</a>
+  </div>
+  <table class="table MyTable table-striped">
+   <thead>
+    <tr>
+     <th>NO</th>
+     <th>ID</th>
+     <th>姓</th>
+     <th></th>
+     <th>電話番号</th>
+     <th>詳細</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr th:each="employee : ${employeelist}" th:object="${employee}"
+     class="align-middle">
+     <td> </td>
+     <td th:text="*{member_id}"></td>
+     <td th:text="*{last_name}"></td>
+     <td th:text="*{first_name}"></td>
+     <td th:text="*{tel_no}"></td>
+     <td><a th:href="@{/employee/{id}/employee_detail(id=*{member_id})}"
+      class="btn btn-secondary">詳細</a></td>
+    </tr>
+   </tbody>
+  </table>
+  <script type="text/javascript" th:src="@{../js/PaginateMyTable.js}"></script>
+  <script>
+    $(document).ready(function() {
+       $(".MyTable").paginate({
+                   rows: 10,          // Set number of rows per page. Default: 5
+                   position: "bottom",   // Set position of pager. Default: "bottom"
+                   jqueryui: false,    // Allows using jQueryUI theme for pager buttons. Default: false
+                   showIfLess: true  // Don't show pager if table has only one page. Default: true
+               });
+    });
+   </script>
+ </div>
 </body>
 <footer style="text-align:center;">
-	<small>Copyright © 2021 KoLookの顧客管理システム制作 山田組 All Rights Reserved.</small>
+ <small>Copyright © 2021 KoLookの顧客管理システム制作 山田組 All Rights Reserved.</small>
 </footer>
 </html>

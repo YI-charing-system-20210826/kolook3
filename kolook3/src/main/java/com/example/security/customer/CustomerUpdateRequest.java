@@ -1,7 +1,6 @@
 package com.example.security.customer;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
@@ -27,13 +26,13 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 
 	public static String gender;
 
-	public static Date birthday;
+	public static String birthday;
 
 	public static String tel_no;
 
 	public static String email;
 
-	public static int post_no;
+	public static String post_no;
 
 	public static String ken_code;
 
@@ -108,12 +107,12 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 		this.email = email;
 	}
 
-	public int getPost_no() {
+	public String getPost_no() {
 		return post_no;
 	}
 
 	@SuppressWarnings("static-access")
-	public void setPost_no(int post_no) {
+	public void setPost_no(String post_no) {
 		this.post_no = post_no;
 	}
 
@@ -144,12 +143,12 @@ public class CustomerUpdateRequest extends CustomerRequest implements Serializab
 		this.address_detail = address_detail;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
 	@SuppressWarnings("static-access")
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
